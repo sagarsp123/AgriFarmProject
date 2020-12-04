@@ -8,6 +8,11 @@ import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { LoginComponent } from './login/login.component';
 import { MainHomeComponent } from './main-home/main-home.component';
 import { ViewMessageComponent } from './view-message/view-message.component';
+import { AdminApproveFarmerComponent } from './admin-approve-farmer/admin-approve-farmer.component';
+import { AdminApproveBidderComponent } from './admin-approve-bidder/admin-approve-bidder.component'
+import { AdminApproveCropComponent } from './admin-approve-crop/admin-approve-crop.component';
+import { AdminApproveClaimComponent } from './admin-approve-claim/admin-approve-claim.component';
+
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -23,8 +28,11 @@ const routes: Routes = [
   {path:"AdminHome",component:AdminHomeComponent},
   {path:"FarmerHome",component:FarmerHomeComponent},
   {path:"BidderHome",component:BidderHomeComponent},
-  {path:"ViewMessage",component:ViewMessageComponent}
-  
+  {path:"ViewMessage",component:ViewMessageComponent},
+  {path:"ApproveFarmer",component:AdminApproveFarmerComponent},
+  {path:"ApproveBidder",component:AdminApproveBidderComponent},
+  {path:"ApproveCrop",component:AdminApproveCropComponent},  
+  {path:"ApproveClaim",component:AdminApproveClaimComponent},  
 ];
 
 @NgModule({

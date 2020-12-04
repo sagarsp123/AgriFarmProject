@@ -1,0 +1,26 @@
+<p>admin-approve-claim works!</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table border="1" width="100%" cellspacing="0" cellpadding>
+    <tr>
+        <th>Cliamid</th>
+        <th>PolicyNo</th>
+        <th>CauseOfClaim</th>
+        <th>DateOfLoss</th>
+        <th>DateOfClaim</th>
+        <th>AmountClaimed</th>
+    </tr>
+        <tr *ngFor="let c of unapprovedclaims">
+            <td>{{c.Cliamid}}</td>
+            <td>{{c.PolicyNo}}</td>
+            <td>{{c.CauseOfClaim}}</td>
+            <td>{{c.DateOfLoss}}</td>
+            <td>{{c.DateOfClaim}}</td>
+            <td>{{c.AmountClaimed}}</td>
+            <td>{{c.SumAssured}}</td>
+            <td><button type="button" (click)="approveClaim(c.Cliamid)">Approve Bidder</button></td>
+        </tr>
+</table>

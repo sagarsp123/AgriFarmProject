@@ -1,0 +1,34 @@
+<p>admin-approve-bidder works!</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table border="1" width="100%" cellspacing="0" cellpadding>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ContactNo</th>
+        <th>FarmerEmail</th>
+        <th>FarmerAddress</th>
+        <th>FarmerCity</th>
+        <th>FarmerState</th>
+        <th>FarmerPincocde</th>
+        <th>FarmerAadhar</th>
+        <th>FarmerCertificate</th>
+
+    </tr>
+        <tr *ngFor="let b of unapprovedbidders">
+            <td>{{b.Bidderid}}</td>
+            <td>{{b.BidderName}}</td>
+            <td>{{b.BidderContactNo}}</td>
+            <td>{{b.BidderEmail}}</td>
+            <td>{{b.BidderAddress}}</td>
+            <td>{{b.BidderCity}}</td>
+            <td>{{b.BidderState}}</td>
+            <td>{{b.BidderPincocde}}</td>
+            <td>{{b.BidderAadhar}}</td>
+            <td>{{b.BidderTradeLicense}}</td>
+            <td><button type="button" (click)="approveBidder(b.Bidderid)">Approve Bidder</button></td>
+        </tr>
+</table>

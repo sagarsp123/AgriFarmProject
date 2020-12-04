@@ -1,0 +1,33 @@
+<p>admin-approve-farmer works!</p>
+<br>
+<br>
+<br>
+<br>
+<br>
+<table border="1" width="100%" cellspacing="0" cellpadding>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>ContactNo</th>
+        <th>FarmerEmail</th>
+        <th>FarmerAddress</th>
+        <th>FarmerCity</th>
+        <th>FarmerState</th>
+        <th>FarmerPincocde</th>
+        <th>FarmerAadhar</th>
+        <th>FarmerCertificate</th>
+    </tr>
+        <tr *ngFor="let f of unapprovedfarmers">
+            <td>{{f.Farmerid}}</td>
+            <td>{{f.FarmerName}}</td>
+            <td>{{f.FarmerContactNo}}</td>
+            <td>{{f.FarmerEmail}}</td>
+            <td>{{f.FarmerAddress}}</td>
+            <td>{{f.FarmerCity}}</td>
+            <td>{{f.FarmerState}}</td>
+            <td>{{f.FarmerPincocde}}</td>
+            <td>{{f.FarmerAadhar}}</td>
+            <td>{{f.FarmerCertificate}}</td>
+            <td><button type="button" (click)="approveFarmer(f.Farmerid)">Approve Farmer</button></td>
+        </tr>
+</table>

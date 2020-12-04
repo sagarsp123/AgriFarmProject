@@ -18,6 +18,14 @@ import { FarmerHomeComponent } from './farmer-home/farmer-home.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { BidderHomeComponent } from './bidder-home/bidder-home.component';
 import { ViewMessageComponent } from './view-message/view-message.component';
+import { AdminApproveFarmerComponent } from './admin-approve-farmer/admin-approve-farmer.component';
+import {AdminApproveFarmerService} from './services/admin-approve-farmer.service';
+import { AdminApproveBidderComponent } from './admin-approve-bidder/admin-approve-bidder.component'
+import { AdminApproveBidderService } from './services/admin-approve-bidder.service';
+import { AdminApproveCropComponent } from './admin-approve-crop/admin-approve-crop.component';
+import {AdminApproveCropService} from './services/admin-approve-crop.service';
+import { AdminApproveClaimComponent } from './admin-approve-claim/admin-approve-claim.component';
+import {AdminApproveClaimService} from './services/admin-approve-claim.service';
 
 
 @NgModule({
@@ -30,7 +38,11 @@ import { ViewMessageComponent } from './view-message/view-message.component';
      FarmerHomeComponent,
      AdminHomeComponent,
      BidderHomeComponent,
-     ViewMessageComponent
+     ViewMessageComponent,
+     AdminApproveFarmerComponent,
+    AdminApproveBidderComponent,
+    AdminApproveCropComponent,
+    AdminApproveClaimComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +51,14 @@ import { ViewMessageComponent } from './view-message/view-message.component';
     HttpClientModule,
     RouterModule
   ],
-  providers: [ContactService,LoginService],
+  providers: [
+    AdminApproveFarmerService,
+    AdminApproveBidderService,
+    AdminApproveCropService,
+    AdminApproveClaimService,
+    ContactService,
+    LoginService,
+  ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA]

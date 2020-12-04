@@ -15,4 +15,19 @@ export class AdminHomeComponent implements OnInit {
   gotomsg(){
     this.router.navigate(['ViewMessage']);
   }
+  gotoaprrovefarmer(){
+    this.router.navigate(['ApproveFarmer']);
+  }
+  gotoaprrovebidder(){
+    this.router.navigate(['ApproveBidder']);
+  }
+  gotoaprrovecrop(){
+    this.router.navigate(['ApproveCrop']);
+  }
+  gotoaprroveclaim(){
+    this.router.navigate(['ApproveClaim']);
+  }
+  gotoaprroveauction(){
+    this.router.navigate(['ViewMessage']);
+  }
 }

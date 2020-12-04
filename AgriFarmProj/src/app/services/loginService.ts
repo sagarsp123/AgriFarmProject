@@ -9,7 +9,8 @@ export class LoginService{
     }
     checkLogin(loginform:NgForm){
         const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
-        //debugger;
-        return this.http.post("https://localhost:44329/checkLogin/",JSON.stringify(loginform.value),httpheader);
+        debugger;
+        JSON.stringify(loginform.value);
+        return this.http.post("https://localhost:44365/checkLogin/",JSON.stringify(loginform.value),httpheader);
     }
 }
