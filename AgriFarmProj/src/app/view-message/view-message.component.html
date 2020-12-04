@@ -1,0 +1,35 @@
+<!-- Contact -->
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Enquiry Messages</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Email Id</th>
+                        <th>Contact Name</th>
+                        <th>Request Type</th>
+                        <th>Message</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let m of msg">
+                            <td> {{m.Email}} </td>
+                            <td> {{m.ContactName}} </td>
+                            <td> {{m.RequestType}} </td>
+                            <td> {{m.Message}} </td>
+                            <td> {{m.Status}} </td>
+                            <td> <button class="btn btn-success">Reply</button> </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+</div>
