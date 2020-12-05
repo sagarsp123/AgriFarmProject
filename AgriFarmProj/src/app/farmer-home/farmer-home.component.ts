@@ -27,4 +27,9 @@ export class FarmerHomeComponent implements OnInit {
   gotosalehistory(){
     this.router.navigate(['SaleHistory']);
   }
+
+  GotoInsuranceApply(){
+    this.router.navigate(['InsuranceApply'])
+  }
+
 }

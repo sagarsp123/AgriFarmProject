@@ -16,6 +16,10 @@ import { SaleHistoryComponent } from './sale-history/sale-history.component';
 import { MarketplaceBidderComponent } from './marketplace-bidder/marketplace-bidder.component';
 import { BidderAuctionComponent } from './bidder-auction/bidder-auction.component';
 
+import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
+import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
+import { RegistrationDashboardComponent } from './registration-dashboard/registration-dashboard.component';
+import { InsuranceApplicationComponent } from './insurance-application/insurance-application.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -39,6 +43,12 @@ const routes: Routes = [
   {path:"SaleHistory",component:SaleHistoryComponent},
   {path:"BidderMarketplace",component:MarketplaceBidderComponent},
   {path:"AuctionPage",component:BidderAuctionComponent},
+  {path:"FarmerRegistration",component:FarmerRegComponent},
+  {path:"BidderRegistration",component:BidderRegComponent},
+  {path:"RegistrationDashboard",component:RegistrationDashboardComponent},
+  {path:"InsuranceApply",component:InsuranceApplicationComponent},
+  
+
 ];
 
 @NgModule({

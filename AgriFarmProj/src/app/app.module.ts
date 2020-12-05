@@ -5,7 +5,7 @@ import {HttpClientModule} from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormsModule, NgForm } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { ContactService } from './services/contactService';
 import { LoginComponent } from './login/login.component';
 import { RouterModule } from '@angular/router';
@@ -32,6 +32,13 @@ import { SaleHistoryService } from './services/salehistoryService';
 import { MarketplaceBidderComponent } from './marketplace-bidder/marketplace-bidder.component';
 import {BidderMarketPlaceService} from './services/bidder-marketplace.service';
 import { BidderAuctionComponent } from './bidder-auction/bidder-auction.component';
+import { FarmerRegComponent } from './farmer-reg/farmer-reg.component';
+import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
+
+import { RegistrationDashboardComponent } from './registration-dashboard/registration-dashboard.component';
+import { RequestService } from './services/farmerregservice';
+import { InsuranceApplicationComponent } from './insurance-application/insurance-application.component';
+
 
 
 
@@ -53,7 +60,12 @@ import { BidderAuctionComponent } from './bidder-auction/bidder-auction.componen
     SaleHistoryComponent,
     MarketplaceBidderComponent,
     BidderAuctionComponent,
+    FarmerRegComponent,
+    BidderRegComponent,
+    RegistrationDashboardComponent,
+    InsuranceApplicationComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -61,6 +73,7 @@ import { BidderAuctionComponent } from './bidder-auction/bidder-auction.componen
     HttpClientModule,
     RouterModule
   ],
+  
   providers: [
     AdminApproveFarmerService,
     AdminApproveBidderService,
@@ -71,6 +84,7 @@ import { BidderAuctionComponent } from './bidder-auction/bidder-auction.componen
     MailService,
     SaleHistoryService,
     BidderMarketPlaceService,
+    RequestService,
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,

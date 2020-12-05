@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 
 @Injectable()
 export class LoginService{
-    url="https://localhost:44365/";
+    url="https://localhost:44322/";
     uemail=null;
     utype=null;
     constructor(private http:HttpClient){
@@ -12,7 +12,7 @@ export class LoginService{
     }
     checkLogin(loginform:NgForm){
         const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
-        debugger;
+        //debugger;
         JSON.stringify(loginform.value);
         return this.http.post(this.url+"checkLogin/",JSON.stringify(loginform.value),httpheader);
     }

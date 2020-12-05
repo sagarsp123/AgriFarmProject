@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   OnLogin(loginform:NgForm){
     console.log(loginform.value);
     this.log.checkLogin(loginform).subscribe((data)=>
-     { debugger;
+     { //debugger;
        if(data["Item1"]=="admin"){
       alert("Hello admin!");
       this.router.navigate(['AdminHome']);
@@ -54,7 +54,10 @@ export class LoginComponent implements OnInit {
     }
      });
 
-    
+     
+  }
+  gotoRegDash(){
+    this.router.navigate(['RegistrationDashboard']);
   }
 
   ngOnInit(): void {
