@@ -29,6 +29,10 @@ import {AdminApproveClaimService} from './services/admin-approve-claim.service';
 import { MailService } from './services/MailService';
 import { SaleHistoryComponent } from './sale-history/sale-history.component';
 import { SaleHistoryService } from './services/salehistoryService';
+import { MarketplaceBidderComponent } from './marketplace-bidder/marketplace-bidder.component';
+import {BidderMarketPlaceService} from './services/bidder-marketplace.service';
+import { BidderAuctionComponent } from './bidder-auction/bidder-auction.component';
+
 
 
 @NgModule({
@@ -47,6 +51,8 @@ import { SaleHistoryService } from './services/salehistoryService';
     AdminApproveCropComponent,
     AdminApproveClaimComponent,
     SaleHistoryComponent,
+    MarketplaceBidderComponent,
+    BidderAuctionComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,8 @@ import { SaleHistoryService } from './services/salehistoryService';
     ContactService,
     LoginService,
     MailService,
-    SaleHistoryService
+    SaleHistoryService,
+    BidderMarketPlaceService,
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,

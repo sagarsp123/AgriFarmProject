@@ -30,9 +30,10 @@ export class AdminApproveClaimComponent implements OnInit {
       if(this.unapprovedclaims[i].Cliamid==id) break;
     }
     console.log(this.unapprovedclaims[i]);
-    this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]);
+    //this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]);
     //this.router.navigate(['ApproveClaim']);
-    //this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]).subscribe((data)=>{console.log(data)});;
+    this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]).subscribe((data)=>{console.log(data)});
+    location.reload();
   }
 
 

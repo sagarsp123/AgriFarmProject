@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AdminApproveCropService{
-    url="https://localhost:44329/api/";
+    url="https://localhost:44365/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedCrops(){
         //debugger;
@@ -23,7 +23,7 @@ export class AdminApproveCropService{
     updateCrop(eg){
         const httpHeaders = { headers:new HttpHeaders({'Content-Type': 'application/json'}) };
         eg.CropApproved=true;
-        eg.ApprovalAdminId=2;
+        eg.ApprovalAdminId=sessionStorage.getItem("aid");
         if(eg.CropName=="Rice") eg.InitialPrice=this.RiceMSP;
         else if(eg.CropName=="Dal") eg.InitialPrice=this.UraddalMSP;
         else if(eg.CropName=="SoyaBean") eg.InitialPrice=this.SoyaBeanMSP;

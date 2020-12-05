@@ -1,0 +1,28 @@
+<p>marketplace-bidder works!</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<table border="1" width="100%" cellspacing="0" cellpadding>
+    <tr>
+        <th>BiddingID</th>
+        <th>CropType</th>
+        <th>CropName</th>
+        <th>InitalPrce</th>
+        <th>CurrentBidPrice</th>
+        <th>BidCloseTime</th>
+
+
+    </tr>
+        <tr *ngFor="let b of currentbids">
+            <td>{{b.Biddingid}}</td>
+            <td>{{b.CropType}}</td>
+            <td>{{b.CropName}}</td>
+            <td>{{b.InitalPrce}}</td>
+            <td>{{b.CurrentBidPrice}}</td>
+            <td>{{b.BidCloseTime}}</td>
+            <td><button type="button" (click)="gotoauction(b.Biddingid)">Go to Auction</button></td>
+        </tr>
+</table>

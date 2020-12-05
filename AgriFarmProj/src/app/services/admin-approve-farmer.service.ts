@@ -5,7 +5,7 @@ import {FarmerApproval} from '../models/farmerapproval.model';
 
 @Injectable()
 export class AdminApproveFarmerService{
-    url="https://localhost:44329/api/";
+    url="https://localhost:44365/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedFarmers(){
         //debugger;
@@ -15,7 +15,7 @@ export class AdminApproveFarmerService{
     updateFarmer(eg){
         const httpHeaders = { headers:new HttpHeaders({'Content-Type': 'application/json'}) };
         eg.FarmerApproved=true;
-        eg.ApprovalAdminId=2;
+        eg.ApprovalAdminId=sessionStorage.getItem("aid");
         console.log(JSON.stringify(eg));
         //put
         return this.http.post(this.url+"ApproveFarmerAdmin/?id="+ eg.Farmerid+"&adminid="+eg.ApprovalAdminId,"");

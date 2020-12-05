@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import {AdminApproveBidderService} from '../services/admin-approve-bidder.service';
 
 @Component({
@@ -26,7 +27,7 @@ export class AdminApproveBidderComponent implements OnInit {
     }
     console.log(this.unapprovedbidders[i]);
     this.adminapprovebiddersService.updateBidder(this.unapprovedbidders[i]).subscribe((data)=>{console.log(data)});;
-    
+    location.reload();
   }
 
 }

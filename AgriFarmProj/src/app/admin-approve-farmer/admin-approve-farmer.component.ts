@@ -26,7 +26,8 @@ export class AdminApproveFarmerComponent implements OnInit {
       if(this.unapprovedfarmers[i].Farmerid==id) break;
     }
     console.log(this.unapprovedfarmers[i]);
-    this.adminapprovefarmerservice.updateFarmer(this.unapprovedfarmers[i]).subscribe((data)=>{console.log(data)});;
+    this.adminapprovefarmerservice.updateFarmer(this.unapprovedfarmers[i]).subscribe((data)=>{console.log(data)});
+    location.reload();
     //this.router.navigate(['ApproveFarmer']);
   }
 

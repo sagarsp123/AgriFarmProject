@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AdminApproveClaimService{
-    url="https://localhost:44329/api/";
+    url="https://localhost:44365/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedClaims(){
         //debugger;
@@ -15,7 +15,7 @@ export class AdminApproveClaimService{
     updateClaim(eg){
         const httpHeaders = { headers:new HttpHeaders({'Content-Type': 'application/json'}) };
         eg.ApprovalStatus="Approved";
-        eg.ApprovalAdminId=2;
+        eg.ApprovalAdminId=sessionStorage.getItem("aid");
         console.log(JSON.stringify(eg));
         //put
         return this.http.post(this.url+'ApproveClaimAdmin/?id='+ eg.Cliamid+'&adminid='+eg.ApprovalAdminId,'');

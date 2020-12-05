@@ -13,6 +13,8 @@ import { AdminApproveBidderComponent } from './admin-approve-bidder/admin-approv
 import { AdminApproveCropComponent } from './admin-approve-crop/admin-approve-crop.component';
 import { AdminApproveClaimComponent } from './admin-approve-claim/admin-approve-claim.component';
 import { SaleHistoryComponent } from './sale-history/sale-history.component';
+import { MarketplaceBidderComponent } from './marketplace-bidder/marketplace-bidder.component';
+import { BidderAuctionComponent } from './bidder-auction/bidder-auction.component';
 
 
 const routerOptions: ExtraOptions = {
@@ -34,7 +36,9 @@ const routes: Routes = [
   {path:"ApproveBidder",component:AdminApproveBidderComponent},
   {path:"ApproveCrop",component:AdminApproveCropComponent},  
   {path:"ApproveClaim",component:AdminApproveClaimComponent},  
-  {path:"SaleHistory",component:SaleHistoryComponent}
+  {path:"SaleHistory",component:SaleHistoryComponent},
+  {path:"BidderMarketplace",component:MarketplaceBidderComponent},
+  {path:"AuctionPage",component:BidderAuctionComponent},
 ];
 
 @NgModule({

@@ -28,4 +28,7 @@ export class BidderHomeComponent implements OnInit {
   gotosalehistory(){
     this.router.navigate(['SaleHistory']);
   }
+  gotomarket(){
+    this.router.navigate(['BidderMarketplace']);
+  }
 }

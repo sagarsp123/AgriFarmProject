@@ -27,7 +27,8 @@ export class AdminApproveCropComponent implements OnInit {
     }
     console.log(this.unapprovedcrops[i]);
     //this.adminapprovecropservice.updateCrop(this.unapprovedcrops[i]);
-    this.adminapprovecropservice.updateCrop(this.unapprovedcrops[i]).subscribe((data)=>{console.log(data)});;
+    this.adminapprovecropservice.updateCrop(this.unapprovedcrops[i]).subscribe((data)=>{console.log(data)});
+    location.reload();
   }
 
 }
