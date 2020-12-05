@@ -5,11 +5,12 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AdminApproveCropService{
+    url="https://localhost:44329/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedCrops(){
         //debugger;
         console.log(new Date().toISOString())
-        return this.http.get('https://localhost:44365/api/GetUnapprovedCrops/')
+        return this.http.get(this.url+'GetUnapprovedCrops/');
     }
 
     RiceMSP:number=1868;
@@ -33,6 +34,6 @@ export class AdminApproveCropService{
         //eg.date=new Date().toISOString();
         console.log(JSON.stringify(eg));
         //put
-        return this.http.post('https://localhost:44365/api/ApproveCropAdmin/?id='+ eg.Requestid+'&adminid='+eg.ApprovalAdminId+'&initprice='+eg.InitialPrice,'');        
+        return this.http.post(this.url+'ApproveCropAdmin/?id='+ eg.Requestid+'&adminid='+eg.ApprovalAdminId+'&initprice='+eg.InitialPrice,'');        
       }
 }

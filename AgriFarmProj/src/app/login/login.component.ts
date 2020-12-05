@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit {
   OnLogin(loginform:NgForm){
     console.log(loginform.value);
     this.log.checkLogin(loginform).subscribe((data)=>
-     {
+     { debugger;
        if(data["Item1"]=="admin"){
       alert("Hello admin!");
       this.router.navigate(['AdminHome']);
@@ -43,8 +43,11 @@ export class LoginComponent implements OnInit {
       sessionStorage.setItem('email',data["Item2"]);
       sessionStorage.setItem('user',data["Item1"]);
     }
-    else if(data["Item1"]=="wrong credentials"){
+    else if(data=="wrong credentials"){
       alert("Invalid Credentials!");
+    }
+    else if(data=="not approved"){
+      alert("User not approved!");
     }
     else{
        alert("User not registered!");

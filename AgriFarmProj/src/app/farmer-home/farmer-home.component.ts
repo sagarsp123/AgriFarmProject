@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from '../services/loginService';
 
 @Component({
   selector: 'app-farmer-home',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./farmer-home.component.css']
 })
 export class FarmerHomeComponent implements OnInit {
-
-  constructor() { }
+  username=null;
+  userdetails:any=[];
+  uid=null;
+  constructor(private log:LoginService,private router:Router) { }
 
   ngOnInit(): void {
+    this.username=sessionStorage.getItem("email");
+    if(this.username!=null){
+      this.userdetails=this.log.getuid().subscribe((data)=>{
+        console.log(data);
+        this.uid=data;
+        sessionStorage.setItem('fid',this.uid);
+      });
+    }
   }
 
+  gotosalehistory(){
+    this.router.navigate(['SaleHistory']);
+  }
 }

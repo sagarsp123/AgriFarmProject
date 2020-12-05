@@ -26,6 +26,9 @@ import { AdminApproveCropComponent } from './admin-approve-crop/admin-approve-cr
 import {AdminApproveCropService} from './services/admin-approve-crop.service';
 import { AdminApproveClaimComponent } from './admin-approve-claim/admin-approve-claim.component';
 import {AdminApproveClaimService} from './services/admin-approve-claim.service';
+import { MailService } from './services/MailService';
+import { SaleHistoryComponent } from './sale-history/sale-history.component';
+import { SaleHistoryService } from './services/salehistoryService';
 
 
 @NgModule({
@@ -43,6 +46,7 @@ import {AdminApproveClaimService} from './services/admin-approve-claim.service';
     AdminApproveBidderComponent,
     AdminApproveCropComponent,
     AdminApproveClaimComponent,
+    SaleHistoryComponent,
   ],
   imports: [
     BrowserModule,
@@ -58,6 +62,8 @@ import {AdminApproveClaimService} from './services/admin-approve-claim.service';
     AdminApproveClaimService,
     ContactService,
     LoginService,
+    MailService,
+    SaleHistoryService
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,

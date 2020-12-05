@@ -5,10 +5,11 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AdminApproveClaimService{
+    url="https://localhost:44329/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedClaims(){
         //debugger;
-        return this.http.get('https://localhost:44365/api/GetUnapprovedClaims/')
+        return this.http.get(this.url+"GetUnapprovedClaims/");
     }
 
     updateClaim(eg){
@@ -17,7 +18,7 @@ export class AdminApproveClaimService{
         eg.ApprovalAdminId=2;
         console.log(JSON.stringify(eg));
         //put
-        //return this.http.post('https://localhost:44365/api/ApproveClaimAdmin/?id='+ eg.Cliamid+'&adminid='+eg.ApprovalAdminId,'');
+        return this.http.post(this.url+'ApproveClaimAdmin/?id='+ eg.Cliamid+'&adminid='+eg.ApprovalAdminId,'');
         //return this.http.post('https://localhost:44365/api/Admin/ApproveFarmer/?id=103&adminid=2','');
         
       }

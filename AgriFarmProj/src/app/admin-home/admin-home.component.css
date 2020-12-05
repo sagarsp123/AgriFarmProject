@@ -43,7 +43,7 @@
     top: 50%;
     transform: translateY(-50%);
     padding: 2rem;
-    margin-top: 3rem;
+    margin-top: 2rem;
 }
 
 .text {
@@ -59,4 +59,11 @@
     position: absolute;
     bottom: 0;
     padding: 2rem;
+}
+
+.container {
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-right: auto;
+    margin-left: auto;
 }

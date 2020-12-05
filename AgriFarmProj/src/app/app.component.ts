@@ -35,6 +35,9 @@ export class AppComponent {
     this.loginsessionuser=false;
     this.router.navigate(['Home']);
   }
- 
+  
+  ngOnInit(){
+    this.router.navigate(['Home']);
+  }
   
 }

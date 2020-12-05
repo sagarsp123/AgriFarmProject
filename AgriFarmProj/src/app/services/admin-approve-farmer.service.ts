@@ -5,10 +5,11 @@ import {FarmerApproval} from '../models/farmerapproval.model';
 
 @Injectable()
 export class AdminApproveFarmerService{
+    url="https://localhost:44329/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedFarmers(){
         //debugger;
-        return this.http.get('https://localhost:44365/api/GetUnapprovedFarmers/')
+        return this.http.get(this.url+"GetUnapprovedFarmers/");
     }
 
     updateFarmer(eg){
@@ -17,7 +18,7 @@ export class AdminApproveFarmerService{
         eg.ApprovalAdminId=2;
         console.log(JSON.stringify(eg));
         //put
-        return this.http.post('https://localhost:44365/api/ApproveFarmerAdmin/?id='+ eg.Farmerid+'&adminid='+eg.ApprovalAdminId,'');
+        return this.http.post(this.url+"ApproveFarmerAdmin/?id="+ eg.Farmerid+"&adminid="+eg.ApprovalAdminId,"");
         //return this.http.post('https://localhost:44365/api/Admin/ApproveFarmer/?id=103&adminid=2','');
         
       }
