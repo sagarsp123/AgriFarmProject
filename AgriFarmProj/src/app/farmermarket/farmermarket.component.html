@@ -1,0 +1,36 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>farmermarket works!</p>
+<br>
+<table border ="1" cellpadding="21" cellspacing="50" width="100%" >
+        <tr>
+            <th>CropType</th>
+            <th>CropName</th>
+            <th>InitalPrce</th>
+            <th>Previous Bid Price</th>
+            <th>Bid Close Time</th>
+            <th>Current Bid Price</th>
+        </tr>
+
+        <tr *ngFor="let f of farmermarketdetails">
+            <td>{{f.CropType}}</td>
+            <td>{{f.CropName}}</td>
+            <td>{{f.InitalPrce}}</td>
+            <td>{{f.PreviousBidPrice}}</td>
+            <td>{{f.BidCloseTime}}</td>
+            <td>{{f.CurrentBidPrice}}</td>
+        </tr>
+</table>
