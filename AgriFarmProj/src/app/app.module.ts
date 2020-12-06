@@ -39,8 +39,12 @@ import { RegistrationDashboardComponent } from './registration-dashboard/registr
 import { RequestService } from './services/farmerregservice';
 import { InsuranceApplicationComponent } from './insurance-application/insurance-application.component';
 
-
-
+import { ClaimRequestService } from './services/claimrequestservice';
+import { CroprequestComponent } from './croprequest/croprequest.component';
+import { CropRequestService } from './services/croprequestservice';
+import { FarmermarketComponent } from './farmermarket/farmermarket.component';
+import { FarmerMarketService } from './services/farmermarketservice';
+import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +67,10 @@ import { InsuranceApplicationComponent } from './insurance-application/insurance
     FarmerRegComponent,
     BidderRegComponent,
     RegistrationDashboardComponent,
-    InsuranceApplicationComponent
+    InsuranceApplicationComponent,
+    ClaiminsuranceComponent,
+    CroprequestComponent,
+    FarmermarketComponent
   ],
 
   imports: [
@@ -85,6 +92,9 @@ import { InsuranceApplicationComponent } from './insurance-application/insurance
     SaleHistoryService,
     BidderMarketPlaceService,
     RequestService,
+    ClaimRequestService,
+    FarmerMarketService,
+    CropRequestService,
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,

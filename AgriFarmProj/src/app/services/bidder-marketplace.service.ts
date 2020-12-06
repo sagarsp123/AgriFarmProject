@@ -9,14 +9,14 @@ export class BidderMarketPlaceService{
 
     GetCurrentSales(){
         //debugger;
-        return this.http.get('https://localhost:44322/api/GetCurrentSales/')
+        return this.http.get('https://localhost:44380/api/GetCurrentSales/')
     }
     // GetAllCrops(){
     //     return this.http.get('https://localhost:44365/api/AllCrops/')
     // }
 
     getCurrentCropById(id){
-        return this.http.get('https://localhost:44322/api/GetCropById/?id='+id)
+        return this.http.get('https://localhost:44380/api/GetCropById/?id='+id)
     }
 
 }

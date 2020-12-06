@@ -21,6 +21,10 @@ import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
 import { RegistrationDashboardComponent } from './registration-dashboard/registration-dashboard.component';
 import { InsuranceApplicationComponent } from './insurance-application/insurance-application.component';
 
+import {ClaiminsuranceComponent} from './claiminsurance/claiminsurance.component';
+import{CroprequestComponent} from'./croprequest/croprequest.component';
+import{FarmermarketComponent} from './farmermarket/farmermarket.component';
+
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
@@ -47,7 +51,9 @@ const routes: Routes = [
   {path:"BidderRegistration",component:BidderRegComponent},
   {path:"RegistrationDashboard",component:RegistrationDashboardComponent},
   {path:"InsuranceApply",component:InsuranceApplicationComponent},
-  
+  {path:"InsuranceClaim",component:ClaiminsuranceComponent},
+  {path:"ListCrop",component:CroprequestComponent},
+  {path:"MarketFarmer",component:FarmermarketComponent}
 
 ];
 

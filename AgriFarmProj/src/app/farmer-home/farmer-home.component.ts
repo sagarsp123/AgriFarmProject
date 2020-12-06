@@ -31,5 +31,18 @@ export class FarmerHomeComponent implements OnInit {
   GotoInsuranceApply(){
     this.router.navigate(['InsuranceApply'])
   }
+  
+  gotoCropRequest(){
+      this.router.navigate(['ListCrop'])
+  }
+
+  gotoFarmerMaret(){
+      this.router.navigate(['MarketFarmer'])
+  }
+
+  GotoClaimInsurance(){
+      this.router.navigate(['InsuranceClaim']);
+  }
+
 
 }
