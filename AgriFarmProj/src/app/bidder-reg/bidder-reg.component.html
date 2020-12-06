@@ -5,7 +5,9 @@
             <div class="col-lg-6">
                 <h2 style="text-align: center;">Personal Details</h2>
                 <!-- Call Me Form -->
-                <form #personalbidder="ngForm" (ngSubmit)="OnBidDetails(personalbidder)" >
+                <form #myForm="ngForm" (ngSubmit)="OnSubmit(BidderName,BidderEmail,BidderContactNo,BidderAddress, BidderCity
+                ,BidderState,BidderPincocde, BidderAadhar,BidderTradeLicense,BidderPassword,
+                AccountNo,IFSC_Code) ;  myForm.reset() " >
                     <div class="form-group">
                         <label for="BidderName">Full Name</label>
                         <input #BidderName="ngModel" type="text" class="form-control-input" [(ngModel)]=bidderdetails.BidderName
@@ -111,48 +113,58 @@
                     
                     <div class="form-group">
                         <label for="BidderAadhar">Upload AADHAR Card</label>
-                        <input #BidderAadhar = "ngModel" [(ngModel)]=bidderdetails.BidderAadhar class="form-control-input" type="file" id="BidderAadhar" name="BidderAadhar">
+                        <input #BidderAadhar = "ngModel"  (change)="handleFileInput($event.target.files)" [(ngModel)]=bidderdetails.BidderAadhar class="form-control-input" type="file" id="BidderAadhar" name="BidderAadhar">
 
                         <div class="help-block with-errors"></div>
                     </div>
 
                     <div class="form-group">
                         <label for="BidderTradeLicense">Upload Certificate</label>
-                        <input #BidderTradeLicense = "ngModel" [(ngModel)]=bidderdetails.BidderTradeLicense class="form-control-input" type="file" id="BidderTradeLicense" name="BidderTradeLicense" >
+                        <input #BidderTradeLicense = "ngModel" (change)="handleFileInput1($event.target.files)"  [(ngModel)]=bidderdetails.BidderTradeLicense class="form-control-input" type="file" id="BidderTradeLicense" name="BidderTradeLicense" >
 
                         <div class="help-block with-errors"></div>
                     </div>
                     <br />
                     
                     <br />
+
                     <div class="form-group">
                         <label for="BidderPassword">Password</label>
                         <input #BidderPassword="ngModel" type="password" [(ngModel)]=bidderdetails.BidderPassword
-                             class="form-control-input" name="BidderPassword"
+                             class="form-control-input" name="BidderPassword" minlength="8"
                             id="BidderPassword" required>
                         
                         <div *ngIf="BidderPassword.invalid && (BidderPassword.dirty||BidderPassword.touched)">
                             <div *ngIf="BidderPassword.errors.required" style="color:red;"
                                 class="help-block with-errors">Password is required!</div>
-                            <div *ngIf="BidderPassword.errors.pattern" style="color:red;"
-                                class="help-block with-errors">Password should contain 8 characters!!</div>
+                                <div *ngIf="BidderPassword.errors?.minlength" style="color:red;">
+                                    Name must be at least 8 characters long.
+                               </div>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>
 
+                    <div class="form-group">
+                        <label for="BidderConfirmPassword">Confirm Password</label>
+                        <input #BidderConfirmPassword="ngModel" type="password" ngValidateEqual="BidderPassword" [(ngModel)]=bidderdetails.BidderConfirmPassword
+                             class="form-control-input" name="BidderConfirmPassword"
+                            id="BidderConfirmPassword" required>
+
+                            <div *ngIf="(BidderConfirmPassword.dirty || BidderConfirmPassword.touched) && BidderConfirmPassword.invalid" style="color:red;">
+                                <p class="warning-text" *ngIf="BidderConfirmPassword.hasError('notEqual') && BidderPassword.valid">
+                                  Passwords Don't Match
+                                </p>
+                            </div>
+                    </div>
                    <!-- <button type="submit" class="form-control-submit-button">SUBMIT PERSONAL DETAILS</button> -->
                     
-                
                 
                 <!---------------Bank---------------->
                 
                 <!--<form #bankdetails="ngForm" (ngSubmit)="OnBankDetails(#bankdetails)" >-->
                 
                     <h2 style="text-align: center;">Bank Details</h2>
-                    <!--<div class="col-lg-6">-->
-
-                    <!-- Call Me Form -->
-
+                
                     <div class="form-group">
                         <label  for="AccountNo">Account Number</label>
                         <input #AccountNo="ngModel" type="text" class="form-control-input"

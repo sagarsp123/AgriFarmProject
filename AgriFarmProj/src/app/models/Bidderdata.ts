@@ -9,6 +9,7 @@ export class BidderData{
     BidderAadhar:String;
     BidderTradeLicense:String;
     BidderPassword:String;
+    BidderConfirmPassword:String;
     
     AccountNo:String;
     IFSC_Code:String;

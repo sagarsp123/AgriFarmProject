@@ -11,9 +11,9 @@
             <div class="col-lg-6">
                 <h2 style="text-align: center;">Personal Details</h2>
                 <!-- Call Me Form -->
-                <form (ngSubmit)="OnSubmit(FarmerName,FarmerEmail,FarmerContactNo,FarmerAddress, FarmerCity
+                <form  #myForm="ngForm" (ngSubmit)="OnSubmit(FarmerName,FarmerEmail,FarmerContactNo,FarmerAddress, FarmerCity
                 ,FarmerState,FarmerPincocde, FarmerAadhar,FarmerCertificate,FarmerPassword,
-                FarmerLandArea,FarmerLandAddress,FarmerLandPincode,AccountNo,IFSC_Code)" >
+                FarmerLandArea,FarmerLandAddress,FarmerLandPincode,AccountNo,IFSC_Code);  myForm.reset() "  >
                     <div class="form-group">
                         <label for="FarmerName">Full Name</label>
                         <input #FarmerName="ngModel" type="text" class="form-control-input" [(ngModel)]=farmerdetails.FarmerName
@@ -135,15 +135,15 @@
                     <br />
                     <div class="form-group">
                         <label for="FarmerPassword">Password</label>
-                        <input #FarmerPassword="ngModel" type="password" [(ngModel)]=farmerdetails.FarmerPassword ng-pattern="/^(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,20}$/"
-                             class="form-control-input" name="FarmerPassword"
-                            id="FarmerPassword" required>
+                        <input #FarmerPassword="ngModel" type="password" [(ngModel)]=farmerdetails.FarmerPassword 
+                             class="form-control-input" name="FarmerPassword" id="FarmerPassword" minlength="8" required>
                         
                         <div *ngIf="FarmerPassword.invalid && (FarmerPassword.dirty||FarmerPassword.touched)">
                             <div *ngIf="FarmerPassword.errors.required" style="color:red;"
                                 class="help-block with-errors">Password is required!</div>
-                            <div *ngIf="FarmerPassword.errors.pattern" style="color:red;"
-                                class="help-block with-errors">Password should contain 8 characters!!</div>
+                            <div *ngIf="FarmerPassword.errors?.minlength" style="color:red;">
+                                Name must be at least 8 characters long.
+                            </div>
                             <div class="help-block with-errors"></div>
                         </div>
                     </div>

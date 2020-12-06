@@ -38,6 +38,8 @@ import { BidderRegComponent } from './bidder-reg/bidder-reg.component';
 import { RegistrationDashboardComponent } from './registration-dashboard/registration-dashboard.component';
 import { RequestService } from './services/farmerregservice';
 import { InsuranceApplicationComponent } from './insurance-application/insurance-application.component';
+import { BidderService } from './services/bidderregservice';
+import { ValidateEqualModule } from 'ng-validate-equal';
 
 import { ClaimRequestService } from './services/claimrequestservice';
 import { CroprequestComponent } from './croprequest/croprequest.component';
@@ -78,7 +80,8 @@ import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.compone
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    ValidateEqualModule
   ],
   
   providers: [
@@ -95,6 +98,7 @@ import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.compone
     ClaimRequestService,
     FarmerMarketService,
     CropRequestService,
+    BidderService
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,

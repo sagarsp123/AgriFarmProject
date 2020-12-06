@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AdminApproveClaimService{
-    url="https://localhost:44380/api/";
+    url="https://localhost:44322/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedClaims(){
         //debugger;

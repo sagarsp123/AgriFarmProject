@@ -95,6 +95,7 @@ OnSubmit(FarmerName,FarmerEmail,FarmerContactNo,FarmerAddress, FarmerCity
     FarmerLandArea.value,FarmerLandAddress.value,FarmerLandPincode.value,AccountNo.value,IFSC_Code.value,
     ).subscribe(
     data =>{
+      alert("Data Added Successfully");
       console.log('done');
       FarmerName.value = "";
       FarmerEmail.value = "";
@@ -112,6 +113,7 @@ OnSubmit(FarmerName,FarmerEmail,FarmerContactNo,FarmerAddress, FarmerCity
       
       this.imageUrl = "/assets/images/farmer.jpg";
       this.imageUrl1 = "/assets/images/farmer.jpg";
+      
     }
   );
  }
