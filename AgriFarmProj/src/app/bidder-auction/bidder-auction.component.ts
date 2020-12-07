@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {BidderMarketPlaceService} from '../services/bidder-marketplace.service';
+import { AuctionBid } from '../models/auctionbid.model';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-bidder-auction',
@@ -9,18 +11,40 @@ import {BidderMarketPlaceService} from '../services/bidder-marketplace.service';
 export class BidderAuctionComponent implements OnInit {
 
 
-
+ auctionprice:AuctionBid;
+  //currentcrops:any=[];
   currentcrop:any=[];
-  AuctionId=sessionStorage.getItem("auctionid");
-  constructor(private biddermarketplaceservice:BidderMarketPlaceService) { }
+  constructor(private biddermarketplaceservice:BidderMarketPlaceService) { 
+    this.auctionprice={
+      BidPrice:0
+    }
+  }
 
   ngOnInit(): void {
+    //debugger;
+    this.fetchauctiondetails();
   }
   fetchauctiondetails(){
-    this.currentcrop=this.biddermarketplaceservice.getCurrentCropById(this.AuctionId).subscribe((data)=>{
-      this.currentcrop=data;console.log(data)
+    //debugger;
+
+    this.currentcrop=this.biddermarketplaceservice.getCurrentCropById().subscribe((data)=>{
+      this.currentcrop=data;console.log(data);
+      console.log(this.currentcrop);
     });
-    console.log(this.currentcrop);
+  }
+
+  DataForm:any=[];
+
+  onSubmit(formdata:NgForm){
+    this.DataForm=formdata.value;
+    console.log(formdata.value);
+    if(this.DataForm.BidPrice<=this.currentcrop.CurrentBidPrice){
+      alert("Value less than or equal to the current bid price");
+    }
+    else{
+      this.biddermarketplaceservice.PlaceBid(this.DataForm.BidPrice).subscribe((data)=>{console.log(data)});
+    }
+   // formdata.BidPrice
   }
 
 }

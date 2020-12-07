@@ -40,6 +40,6 @@ export class AdminHomeComponent implements OnInit {
     this.router.navigate(['ApproveClaim']);
   }
   gotoaprroveauction(){
-    this.router.navigate(['ViewMessage']);
+    this.router.navigate(['ApproveAuction']);
   }
 }

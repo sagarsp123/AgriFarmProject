@@ -25,6 +25,9 @@ import {ClaiminsuranceComponent} from './claiminsurance/claiminsurance.component
 import{CroprequestComponent} from'./croprequest/croprequest.component';
 import{FarmermarketComponent} from './farmermarket/farmermarket.component';
 
+
+import { AdminApproveAuctionComponent } from './admin-approve-auction/admin-approve-auction.component';
+
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
@@ -53,7 +56,8 @@ const routes: Routes = [
   {path:"InsuranceApply",component:InsuranceApplicationComponent},
   {path:"InsuranceClaim",component:ClaiminsuranceComponent},
   {path:"ListCrop",component:CroprequestComponent},
-  {path:"MarketFarmer",component:FarmermarketComponent}
+  {path:"MarketFarmer",component:FarmermarketComponent},
+  {path:"ApproveAuction",component:AdminApproveAuctionComponent},
 
 ];
 

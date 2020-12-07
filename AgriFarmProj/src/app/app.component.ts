@@ -37,7 +37,14 @@ export class AppComponent {
   }
   
   ngOnInit(){
-    this.router.navigate(['Home']);
+    this.username=sessionStorage.getItem("email");
+    if(this.username!=null){
+      this.usertype=sessionStorage.getItem("user");
+      if(this.usertype=="admin") this.router.navigate(['AdminHome']);
+      else if(this.usertype=="farmer") this.router.navigate(['FarmerHome']);
+      else this.router.navigate(['BidderHome']);
+    }
+    else this.router.navigate(['Home']);
   }
   
 }

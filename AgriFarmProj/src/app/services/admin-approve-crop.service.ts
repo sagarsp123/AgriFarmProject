@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable()
 export class AdminApproveCropService{
-    url="https://localhost:44322/api/";
+    url="https://localhost:44365/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedCrops(){
         //debugger;
@@ -24,13 +24,13 @@ export class AdminApproveCropService{
         const httpHeaders = { headers:new HttpHeaders({'Content-Type': 'application/json'}) };
         eg.CropApproved=true;
         eg.ApprovalAdminId=sessionStorage.getItem("aid");
-        eg.InitialPrice=2000;
-        if(eg.CropName=="Rice") eg.InitialPrice=this.RiceMSP;
-        else if(eg.CropName=="Dal") eg.InitialPrice=this.UraddalMSP;
-        else if(eg.CropName=="SoyaBean") eg.InitialPrice=this.SoyaBeanMSP;
-        else if(eg.CropName=="GroundNut") eg.InitialPrice=this.GroundnutMSP;
-        else if(eg.CropName=="Cotton") eg.InitialPrice=this.CottonMSP;
-        else if(eg.CropName=="test") eg.InitialPrice=1111*eg.Quantity;
+        eg.InitialPrice=2000*eg.Quantity;
+        if(eg.CropName=="Rice") eg.InitialPrice=this.RiceMSP*eg.Quantity;
+        else if(eg.CropName=="Dal") eg.InitialPrice=this.UraddalMSP*eg.Quantity;
+        else if(eg.CropName=="SoyaBean") eg.InitialPrice=this.SoyaBeanMSP*eg.Quantity;
+        else if(eg.CropName=="GroundNut") eg.InitialPrice=this.GroundnutMSP*eg.Quantity;
+        else if(eg.CropName=="Cotton") eg.InitialPrice=this.CottonMSP*eg.Quantity;
+        else if(eg.CropName=="test") eg.InitialPrice=1111*eg.Quantity*eg.Quantity;
 
         //eg.date=new Date().toISOString();
         console.log(JSON.stringify(eg));

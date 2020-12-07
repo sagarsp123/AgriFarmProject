@@ -10,7 +10,6 @@ import {AdminApproveClaimService} from '../services/admin-approve-claim.service'
 export class AdminApproveClaimComponent implements OnInit {
 
   unapprovedclaims:any=[];
-  insurancelist:any=[];
   constructor(private adminapproveclaimservice:AdminApproveClaimService,private router:Router) { }
 
   ngOnInit(): void {

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {BidderMarketPlaceService} from '../services/bidder-marketplace.service';
 
+
 @Component({
   selector: 'app-marketplace-bidder',
   templateUrl: './marketplace-bidder.component.html',
@@ -20,7 +21,7 @@ export class MarketplaceBidderComponent implements OnInit {
 
   fetchCurrentBids(){
     this.currentbids=this.biddermarketplaceservice.GetCurrentSales().subscribe((data)=>{this.currentbids=data;console.log(data)});
-    console.log(this.currentbids);
+    console.log(this.currentbids[0]);
   }
 
   gotoauction(bidid){

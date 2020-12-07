@@ -11,7 +11,7 @@ export class ClaimRequestService {
 
         console.log(Claimrequest.value);
         const httpheader={headers: new HttpHeaders({'Content-Type': 'application/json'})};
-        return this.http.post("https://localhost:44322/IsuranceList",JSON.stringify(Claimrequest.value),httpheader);
+        return this.http.post("https://localhost:44365/IsuranceList",JSON.stringify(Claimrequest.value),httpheader);
     } 
 
     listInsurance()

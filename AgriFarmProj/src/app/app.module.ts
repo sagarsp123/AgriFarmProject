@@ -48,6 +48,9 @@ import { FarmermarketComponent } from './farmermarket/farmermarket.component';
 import { FarmerMarketService } from './services/farmermarketservice';
 import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.component';
 
+import { AdminApproveAuctionComponent } from './admin-approve-auction/admin-approve-auction.component';
+import {AdminApproveAuctionService} from './services/admin-approve-auction.service';
+
 @NgModule({
   declarations: [
      AppComponent,
@@ -72,7 +75,8 @@ import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.compone
     InsuranceApplicationComponent,
     ClaiminsuranceComponent,
     CroprequestComponent,
-    FarmermarketComponent
+    FarmermarketComponent,
+    AdminApproveAuctionComponent
   ],
 
   imports: [
@@ -98,7 +102,8 @@ import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.compone
     ClaimRequestService,
     FarmerMarketService,
     CropRequestService,
-    BidderService
+    BidderService,
+    AdminApproveAuctionService,
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,

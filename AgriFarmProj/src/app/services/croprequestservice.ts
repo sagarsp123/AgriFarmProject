@@ -12,11 +12,11 @@ export class CropRequestService
   {
      console.log(Croprequest.value);
      const httpheader={headers: new HttpHeaders({'Content-Type': 'application/json'})};
-     return this.http.post("https://localhost:44322/list",JSON.stringify(Croprequest.value),httpheader);
+     return this.http.post("https://localhost:44365/list",JSON.stringify(Croprequest.value),httpheader);
   }
 
   postFile(CropType: string,CropName:string,Quantity:number,FertilizerType:string, fileToUpload: File) {
-    const endpoint = 'https://localhost:44380/CropRequest';
+    const endpoint = 'https://localhost:44365/CropRequest';
     const formData: FormData = new FormData();
     formData.append('Image', fileToUpload, fileToUpload.name);
     formData.append('CropType', CropType);

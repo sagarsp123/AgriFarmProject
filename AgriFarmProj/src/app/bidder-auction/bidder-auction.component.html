@@ -8,7 +8,7 @@
 <br>
 <br>
 <p>bidder-auction works!</p>
-
+<!-- <button type="button" (click)="displaycrop()">fetch details</button>
 <table border="1" width="100%" cellspacing="0" cellpadding>
     <tr>
         <th>BiddingID</th>
@@ -20,13 +20,49 @@
 
 
     </tr>
-        <tr *ngFor="let b of currentcrop">
+        <tr *ngFor="let b of currentcrops">
             <td>{{b.Biddingid}}</td>
             <td>{{b.CropType}}</td>
             <td>{{b.CropName}}</td>
             <td>{{b.InitalPrce}}</td>
             <td>{{b.CurrentBidPrice}}</td>
             <td>{{b.BidCloseTime}}</td>
-            <td><button type="button" (click)="placebid(b.Biddingid)">Go to Auction</button></td>
+            <td><button type="button" (click)="placebid()">Go to Auction</button></td>
         </tr>
-</table>
+</table> -->
+
+<div>
+    <p>Bidding id: {{currentcrop.Biddingid}}</p>
+    <p>CropType: {{currentcrop.CropType}}</p>
+    <p>CropName: {{currentcrop.CropName}}</p>
+    <p>Minimum Sale Price: {{currentcrop.InitalPrce}}</p>
+    <p>Current Price: {{currentcrop.CurrentBidPrice}}</p>
+    <p>BidCloseTime: {{currentcrop.BidCloseTime}}</p>
+</div>
+
+<div>
+    <form #auctionplacebid="ngForm" (ngSubmit)="onSubmit(auctionplacebid)">
+                        
+        <div class="form-group">
+            <label for="BidPrice">Enter Bid</label>
+            <input #BidPrice="ngModel" type="number" class="form-control-input"
+                [(ngModel)]=auctionprice.BidPrice id="BidPrice" name="BidPrice" required>
+
+
+                <label>{{currentcrop.CurrentBidPrice}}</label>
+                
+                <div *ngIf="BidPrice.value < currentcrop.CurrentBidPrice.value"> please enter proper values</div>
+            <div *ngIf="BidPrice.invalid && (BidPrice.dirty|| BidPrice.touched)">
+                <div *ngIf="BidPrice.errors.required" style="color:red;" class="help-block with-errors">BidPrice
+                    is
+                    required!</div>
+
+                
+            </div>
+        </div>
+        <div class="item">
+            <button type="submit" class="form-control-submit-button">Submit</button>
+        </div>
+
+    </form>
+</div>

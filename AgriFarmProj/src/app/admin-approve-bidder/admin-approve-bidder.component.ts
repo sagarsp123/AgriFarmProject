@@ -26,8 +26,9 @@ export class AdminApproveBidderComponent implements OnInit {
       if(this.unapprovedbidders[i].Bidderid==id) break;
     }
     console.log(this.unapprovedbidders[i]);
-    this.adminapprovebiddersService.updateBidder(this.unapprovedbidders[i]).subscribe((data)=>{console.log(data)});;
-    location.reload();
+    this.adminapprovebiddersService.updateBidder(this.unapprovedbidders[i]).subscribe((data)=>{console.log(data)});
+    this.ngOnInit();
+    //location.reload();
   }
 
 }

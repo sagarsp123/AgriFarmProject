@@ -31,8 +31,8 @@
                             <td>{{b.BidderCity}}</td>
                             <td>{{b.BidderState}}</td>
                             <td>{{b.BidderPincocde}}</td>
-                            <td>{{b.BidderAadhar}}</td>
-                            <td>{{b.BidderTradeLicense}}</td>
+                            <td><img src="https://localhost:44365/Image/{{b.BidderAadhar}}" width="150" height="150" alt="{{b.BidderAadhar}}"/></td>
+                            <td><img src="https://localhost:44365/Image/{{b.BidderAadhar}}" width="150" height="150" alt="{{b.BidderAadhar}}"/>{{f.FarmerCertificate}}</td>
                             <td><button type="button" class="btn btn-success" (click)="approveBidder(b.Bidderid)">Approve Bidder</button></td>
                         </tr>
                     </tbody>
