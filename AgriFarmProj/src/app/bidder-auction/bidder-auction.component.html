@@ -1,13 +1,7 @@
 <br>
 <br>
+
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<p>bidder-auction works!</p>
 <!-- <button type="button" (click)="displaycrop()">fetch details</button>
 <table border="1" width="100%" cellspacing="0" cellpadding>
     <tr>
@@ -30,14 +24,17 @@
             <td><button type="button" (click)="placebid()">Go to Auction</button></td>
         </tr>
 </table> -->
-
+<div style="text-align:center">
 <div>
-    <p>Bidding id: {{currentcrop.Biddingid}}</p>
-    <p>CropType: {{currentcrop.CropType}}</p>
-    <p>CropName: {{currentcrop.CropName}}</p>
-    <p>Minimum Sale Price: {{currentcrop.InitalPrce}}</p>
-    <p>Current Price: {{currentcrop.CurrentBidPrice}}</p>
-    <p>BidCloseTime: {{currentcrop.BidCloseTime}}</p>
+    <img src={{imagetodisplay}}  width="300" height="300"/>
+</div>
+<div>
+    <b>Bidding id:</b> {{currentcrop.Biddingid}}<br>
+    <b>CropType: </b>{{currentcrop.CropType}}<br>
+    <b>CropName:</b> {{currentcrop.CropName}}<br>
+    <b>Minimum Sale Price:</b> {{currentcrop.InitalPrce}}<br>
+    <b>Current Price:</b> {{currentcrop.CurrentBidPrice}}<br>
+    <b>BidCloseTime:</b> {{currentcrop.BidCloseTime}}<br>
 </div>
 
 <div>
@@ -49,7 +46,6 @@
                 [(ngModel)]=auctionprice.BidPrice id="BidPrice" name="BidPrice" required>
 
 
-                <label>{{currentcrop.CurrentBidPrice}}</label>
                 
                 <div *ngIf="BidPrice.value < currentcrop.CurrentBidPrice.value"> please enter proper values</div>
             <div *ngIf="BidPrice.invalid && (BidPrice.dirty|| BidPrice.touched)">
@@ -65,4 +61,5 @@
         </div>
 
     </form>
+</div>
 </div>
