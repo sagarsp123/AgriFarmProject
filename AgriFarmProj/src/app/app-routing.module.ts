@@ -27,6 +27,8 @@ import{FarmermarketComponent} from './farmermarket/farmermarket.component';
 
 
 import { AdminApproveAuctionComponent } from './admin-approve-auction/admin-approve-auction.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -58,6 +60,7 @@ const routes: Routes = [
   {path:"ListCrop",component:CroprequestComponent},
   {path:"MarketFarmer",component:FarmermarketComponent},
   {path:"ApproveAuction",component:AdminApproveAuctionComponent},
+  {path:"ForgotPasswordComponent",component:ForgotPasswordComponent}
 
 ];
 

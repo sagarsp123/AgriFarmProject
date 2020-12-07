@@ -65,6 +65,31 @@ OnSubmit(CropType,CropName,Quantity,FertilizerType,Image){
     }
   );
  }
+ dataSource=   [
+  {
+        group: 'Kharif',
+        items: [
+            {id: 'Cotton', name: 'Cotton'},
+            {id: 'GroundNut', name: 'GroundNut'},
+            {id: 'Rice', name: 'Rice'},
+            {id: 'SoyaBean', name: 'SoyaBean'}
+        ]
+    },
+    {
+        group: 'Rabi',
+        items: [
+            {id: 'Wheat', name: 'Wheat'},
+            {id: 'Barley', name: 'Barley'},
+        ]
+    },
+    {
+        group: 'Hoticulture',
+        items: [
+            {id: 'Ginger', name: 'Ginger'},
+            {id: 'Pea', name: 'Pea'},
 
+        ]
+    }
+]
 
 }

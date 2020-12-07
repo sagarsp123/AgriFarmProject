@@ -54,9 +54,15 @@
                             <input type="radio" name="UserType" value="Bidder" [(ngModel)]=login.UserType #UserType="ngModel">Bidder &nbsp;&nbsp;
                         </div><br>
 
+                        <br>
+                        <a (click)="gotoForgPass()">
+                            Forgot Password for Registered Users !!!
+                        </a>
+                        <br><br><br>
                         <a (click)="gotoRegDash()">
                             New User? Register Here!
                         </a>
+                        
                         <div class="col-md-12 text-center ">
                             <button type="submit " class="contact-button" [disabled]=!loginform.valid>Login</button>
                         </div>

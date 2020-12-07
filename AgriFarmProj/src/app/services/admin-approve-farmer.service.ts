@@ -5,7 +5,7 @@ import {FarmerApproval} from '../models/farmerapproval.model';
 
 @Injectable()
 export class AdminApproveFarmerService{
-    url="https://localhost:44365/api/";
+    url="https://localhost:44322/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedFarmers(){
         //debugger;

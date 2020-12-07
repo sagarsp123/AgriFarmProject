@@ -12,6 +12,6 @@ export class FarmerMarketService
 
     getfarmermarket()
     {
-            return this.http.get("https://localhost:44365/Farmerplace");
+            return this.http.get("https://localhost:44322/Farmerplace");
     }
 }

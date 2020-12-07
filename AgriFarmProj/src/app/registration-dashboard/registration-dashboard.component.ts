@@ -17,6 +17,10 @@ export class RegistrationDashboardComponent implements OnInit {
   gotoBidder(){
     this.router.navigate(['BidderRegistration'])
   }
+
+  gotoLogin(){
+    this.router.navigate(['Login']);
+  }
   ngOnInit(): void {
   }
 

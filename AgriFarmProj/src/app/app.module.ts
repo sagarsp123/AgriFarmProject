@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http'
 
-
+import { ReactiveFormsModule, FormControl} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -48,8 +48,12 @@ import { FarmermarketComponent } from './farmermarket/farmermarket.component';
 import { FarmerMarketService } from './services/farmermarketservice';
 import { ClaiminsuranceComponent } from './claiminsurance/claiminsurance.component';
 
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ForgotserviceService } from './services/ForgetService'
+
 import { AdminApproveAuctionComponent } from './admin-approve-auction/admin-approve-auction.component';
 import {AdminApproveAuctionService} from './services/admin-approve-auction.service';
+
 
 @NgModule({
   declarations: [
@@ -76,7 +80,8 @@ import {AdminApproveAuctionService} from './services/admin-approve-auction.servi
     ClaiminsuranceComponent,
     CroprequestComponent,
     FarmermarketComponent,
-    AdminApproveAuctionComponent
+    AdminApproveAuctionComponent,
+    ForgotPasswordComponent
   ],
 
   imports: [
@@ -85,7 +90,8 @@ import {AdminApproveAuctionService} from './services/admin-approve-auction.servi
     FormsModule,
     HttpClientModule,
     RouterModule,
-    ValidateEqualModule
+    ValidateEqualModule,
+    ReactiveFormsModule,
   ],
   
   providers: [
@@ -104,6 +110,7 @@ import {AdminApproveAuctionService} from './services/admin-approve-auction.servi
     CropRequestService,
     BidderService,
     AdminApproveAuctionService,
+    ForgotserviceService,
   ],
   bootstrap: [AppComponent],
   schemas:[CUSTOM_ELEMENTS_SCHEMA,

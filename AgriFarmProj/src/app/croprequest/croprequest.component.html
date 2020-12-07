@@ -16,11 +16,13 @@
 
     <div class="form-group">
         <label for="CropName"> Crop Name :</label>
-          <select class="form-control" name="CropName" id="crop-name" [(ngModel)]="CrpReq.CropName" #CropName="ngModel"> 
-        <option *ngFor ="let cn of drpCropName" >{{cn}}</option>
+          <select class="form-control-input" name="CropName" id="crop-name" [(ngModel)]="CrpReq.CropName" #CropName="ngModel" required> 
+         <option selected>Default</option>
+         <optgroup *ngFor = 'let grp of dataSource' label="{{grp.group}}">
+        <option *ngFor = 'let item of grp.items' [value]="item.id">{{item.name}}</option> 
+      </optgroup>
         </select>
     </div>
-    <br/>
 
     <div class="form-group">
         <label for="FertilizerType"> Fertilizer Type :</label>

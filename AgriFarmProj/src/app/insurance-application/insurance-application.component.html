@@ -33,17 +33,14 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Crop">Enter Crop</label>
-                            <input #Crop="ngModel" type="text" class="form-control-input"
-                                [(ngModel)]=insurancedetails.CropName id="Crop" name="Crop" required>
-
-                            <div *ngIf="Crop.invalid && (Crop.dirty|| Crop.touched)">
-                                <div *ngIf="Crop.errors.required" style="color:red;" class="help-block with-errors">Crop
-                                    is
-                                    required!</div>
-                            </div>
+                            <label for="CropName">Enter Crop</label>
+                            <select class="form-control-input" name="CropName" id="CropName" [(ngModel)]="insurancedetails.CropName" #CropName="ngModel" required>
+                             <optgroup *ngFor = 'let grp of dataSource' label="{{grp.group}}">
+                                <option *ngFor = 'let item of grp.items' [value]="item.id">{{item.name}}</option> 
+                                </optgroup>
+                                </select>
                         </div>
-
+                        
                         <div class="form-group">
                             <label for="Area">Enter Area</label>
                             <input #Area="ngModel" type="number" class="form-control-input"

@@ -13,7 +13,7 @@ export class RequestService
     FarmerPincocde:string,fileToUpload: File, fileToUpload1: File,FarmerPassword:string,FarmerLandArea:string,FarmerLandAddress:string, FarmerLandPincode:string,AccountNo:string
     ,IFSC_Code:string) {
     
-    const endpoint = 'https://localhost:44365/Methodtwo';
+    const endpoint = 'https://localhost:44322/Methodtwo';
     const formData: FormData = new FormData();
     formData.append('Image', fileToUpload, fileToUpload.name);
     formData.append('Image1', fileToUpload1, fileToUpload1.name);

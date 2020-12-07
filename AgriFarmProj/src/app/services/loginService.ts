@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 
 @Injectable()
 export class LoginService{
-    url="https://localhost:44365/";
+    url="https://localhost:44322/";
     uemail=null;
     utype=null;
     constructor(private http:HttpClient){

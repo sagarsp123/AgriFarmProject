@@ -60,6 +60,9 @@ export class LoginComponent implements OnInit {
     this.router.navigate(['RegistrationDashboard']);
   }
 
+  gotoForgPass(){
+    this.router.navigate(['ForgotPasswordComponent']);
+  }
   ngOnInit(): void {
   }
 

@@ -16,7 +16,7 @@ export class CropRequestService
   }
 
   postFile(CropType: string,CropName:string,Quantity:number,FertilizerType:string, fileToUpload: File) {
-    const endpoint = 'https://localhost:44365/CropRequest';
+    const endpoint = 'https://localhost:44322/CropRequest';
     const formData: FormData = new FormData();
     formData.append('Image', fileToUpload, fileToUpload.name);
     formData.append('CropType', CropType);

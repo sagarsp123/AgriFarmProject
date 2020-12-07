@@ -11,7 +11,7 @@ export class BidderService
   postFile(BidderName: string, BidderEmail:string, BidderContactNo:string,BidderAddress:string,BidderCity:string,BidderState:string,
     BidderPincocde:string,fileToUpload: File, fileToUpload1: File,BidderPassword:string,AccountNo:string,IFSC_Code:string) {
     
-    const endpoint = 'https://localhost:44365/RegBidder';
+    const endpoint = 'https://localhost:44322/RegBidder';
     const formData: FormData = new FormData();
     formData.append('Image', fileToUpload, fileToUpload.name);
     formData.append('Image1', fileToUpload1, fileToUpload1.name);

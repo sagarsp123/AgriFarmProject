@@ -14,7 +14,6 @@ body {
 h1,
 h2,
 h3,
-h4,
 h5,
 h6 {
     font-family: 'Oleo Script Swash Caps', cursive;
@@ -30,7 +29,8 @@ a {
 .navbar-brand {
     font-family: 'Oleo Script Swash Caps', cursive;
     color: #ffffff;
-    font-size: 26px;
+    font-size: 20px;
+    text-align: left;
 }
 
 .navbar-brand:hover {
@@ -59,13 +59,32 @@ a {
     float: left;
 }
 
+.banner2 {
+    background-attachment: fixed;
+    background-color: #077542;
+    background-image: url(images/Agriculture.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    cursor: default;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+
 .bg-overlay {
     padding: 280px 0 220px;
     background-color: RGBA(15, 5, 20, 0.84);
 }
 
+.bg-overlay1 {
+    background-color: RGBA(15, 5, 20, 0.84);
+}
+
 .banner-text h2 {
     font-size: 50px;
+    color: white;
 }
 
 .banner-text h2 span {
@@ -75,6 +94,7 @@ a {
 .banner-text p {
     font-size: 15px;
 }
+
 
 .banner-button {
     border: rgba(204, 204, 204, 0.18) 1px solid;
@@ -235,9 +255,6 @@ a {
     padding: 20px 20px 10px;
     border-radius: 10px;
 }
-
-.item {}
-
 .test p {
     font-size: 15px;
     font-weight: 300;

@@ -35,7 +35,7 @@ insurancedetails: InsuranceApp
   onSubmit(formdata:NgForm){
     this.DataForm=formdata.value;
     console.log(this.DataForm);
-    if( this.DataForm.Crop=="Rice"){
+    if( this.DataForm.CropName=="Rice"){
       console.log(this.DataForm.Crop);
       this.DetailsOfInsurance.push(
         {
@@ -44,7 +44,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:84015,
           Premium:8401*this.DataForm.Area,
           SumAssured:84015*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Year:this.DataForm.Year,
           Season:this.DataForm.Season
@@ -53,7 +53,7 @@ insurancedetails: InsuranceApp
       console.log(this.DetailsOfInsurance[0]);
     }
     
-    else if(this.DataForm.Crop=="Cotton"){
+    else if(this.DataForm.CropName=="Cotton"){
       this.DetailsOfInsurance.push(
         {
           Farmerid:sessionStorage.getItem("fid"),
@@ -61,7 +61,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:43000,
           Premium:2150*this.DataForm.Area,
           SumAssured:43000*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Season:this.DataForm.Season,
           Year:this.DataForm.Year
@@ -69,7 +69,7 @@ insurancedetails: InsuranceApp
       );
       console.log(this.DetailsOfInsurance);
     }
-    else if(this.DataForm.Crop=="GroundNut"){
+    else if(this.DataForm.CropName=="GroundNut"){
       this.DetailsOfInsurance.push(
         {
           Farmerid:sessionStorage.getItem("fid"),
@@ -77,7 +77,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:35000,
           Premium:700*this.DataForm.Area,
           SumAssured:35000*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Season:this.DataForm.Season,
           Year:this.DataForm.Year,
@@ -85,7 +85,7 @@ insurancedetails: InsuranceApp
       );
       console.log(this.DetailsOfInsurance);
     }
-    else if(this.DataForm.Crop=="SoyaBean"){
+    else if(this.DataForm.CropName=="SoyaBean"){
       this.DetailsOfInsurance.push(
         {
           Farmerid:sessionStorage.getItem("fid"),
@@ -93,7 +93,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:45000,
           Premium:900*this.DataForm.Area,
           SumAssured:45000*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Season:this.DataForm.Season,
           Year:this.DataForm.Year,
@@ -101,7 +101,7 @@ insurancedetails: InsuranceApp
       );
       console.log(this.DetailsOfInsurance);
     }
-    else if(this.DataForm.Crop=="Wheat"){
+    else if(this.DataForm.CropName=="Wheat"){
       this.DetailsOfInsurance.push(
         {
           Farmerid:sessionStorage.getItem("fid"),
@@ -109,7 +109,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:48753,
           Premium:731*this.DataForm.Area,
           SumAssured:48753*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Season:this.DataForm.Season,
           Year:this.DataForm.Year,
@@ -118,7 +118,7 @@ insurancedetails: InsuranceApp
       console.log(this.DetailsOfInsurance);
     }
     
-    else if(this.DataForm.Crop=="Barley"){
+    else if(this.DataForm.CropName=="Barley"){
       this.DetailsOfInsurance.push(
         {
           Farmerid:sessionStorage.getItem("fid"),
@@ -126,7 +126,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:42000,
           Premium:630*this.DataForm.Area,
           SumAssured:42000*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Season:this.DataForm.Season,
           Year:this.DataForm.Year,
@@ -135,7 +135,7 @@ insurancedetails: InsuranceApp
       console.log(this.DetailsOfInsurance);
     }
     
-    else if(this.DataForm.Crop=="Ginger"){
+    else if(this.DataForm.CropName=="Ginger"){
       this.DetailsOfInsurance.push(
         {
           Farmerid:sessionStorage.getItem("fid"),
@@ -143,7 +143,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:25000,
           Premium:1250*this.DataForm.Area,
           SumAssured:25000*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Season:this.DataForm.Season,
           Year:this.DataForm.Year,
@@ -152,7 +152,7 @@ insurancedetails: InsuranceApp
       console.log(this.DetailsOfInsurance);
     }
     
-    else if(this.DataForm.Crop=="Peas"){
+    else if(this.DataForm.CropName=="Peas"){
       this.DetailsOfInsurance.push(
         {
           Farmerid:sessionStorage.getItem("fid"),
@@ -160,7 +160,7 @@ insurancedetails: InsuranceApp
           SumAssuredPerHec:30000,
           Premium:1500*this.DataForm.Area,
           SumAssured:30000*this.DataForm.Area,
-          CropName:this.DataForm.Crop,
+          CropName:this.DataForm.CropName,
           Area:this.DataForm.Area,
           Season:this.DataForm.Season,
           Year:this.DataForm.Year,
@@ -176,11 +176,36 @@ insurancedetails: InsuranceApp
     this.http.post('https://localhost:44322/api/ApplyInsurance/',JSON.stringify(this.DetailsOfInsurance[0]),httpheader)
     .subscribe((data)=>
     {console.log(data);
-       
+      if(data=="OK") alert('Insurance applied successfully');
     })    
   }
 
   ngOnInit(): void {
   }
-
+  dataSource=   [
+    {
+          group: 'Kharif',
+          items: [
+              {id: 'Cotton', name: 'Cotton'},
+              {id: 'GroundNut', name: 'GroundNut'},
+              {id: 'Rice', name: 'Rice'},
+              {id: 'SoyaBean', name: 'SoyaBean'}
+          ]
+      },
+      {
+          group: 'Rabi',
+          items: [
+              {id: 'Wheat', name: 'Wheat'},
+              {id: 'Barley', name: 'Barley'},
+          ]
+      },
+      {
+          group: 'Hoticulture',
+          items: [
+              {id: 'Ginger', name: 'Ginger'},
+              {id: 'Pea', name: 'Pea'},
+  
+          ]
+      }
+  ]
 }
