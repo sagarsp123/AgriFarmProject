@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AdminApproveFarmerService} from '../services/admin-approve-farmer.service';
+import { MailService } from '../services/MailService';
 
 @Component({
   selector: 'app-admin-approve-farmer',
@@ -10,7 +11,8 @@ import {AdminApproveFarmerService} from '../services/admin-approve-farmer.servic
 export class AdminApproveFarmerComponent implements OnInit {
 
   unapprovedfarmers:any=[];
-  constructor(private adminapprovefarmerservice: AdminApproveFarmerService,private router: Router) { }
+  constructor(private adminapprovefarmerservice: AdminApproveFarmerService,private router: Router
+    ,private mailservice:MailService) { }
 
   ngOnInit(): void {
     this.fetchUnapprovedFarmers();
@@ -27,6 +29,15 @@ export class AdminApproveFarmerComponent implements OnInit {
     }
     console.log(this.unapprovedfarmers[i]);
     this.adminapprovefarmerservice.updateFarmer(this.unapprovedfarmers[i]).subscribe((data)=>{console.log(data)});
+    this.mailservice.ApprovalMail(this.unapprovedfarmers[i].FarmerEmail).subscribe((data)=>{
+      if(data=="mail sent"){
+        alert("Farmer Approved!");
+      }
+      else{
+        alert("Error! Try again");
+      }
+    });
+  
     location.reload();
     //this.router.navigate(['ApproveFarmer']);
   }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {AdminApproveClaimService} from '../services/admin-approve-claim.service';
+import { MailService } from '../services/MailService';
 
 @Component({
   selector: 'app-admin-approve-claim',
@@ -10,7 +11,8 @@ import {AdminApproveClaimService} from '../services/admin-approve-claim.service'
 export class AdminApproveClaimComponent implements OnInit {
 
   unapprovedclaims:any=[];
-  constructor(private adminapproveclaimservice:AdminApproveClaimService,private router:Router) { }
+  constructor(private adminapproveclaimservice:AdminApproveClaimService,private router:Router
+    ,private mailservice:MailService) { }
 
   ngOnInit(): void {
     this.fetchUnapprovedClaims();
@@ -32,6 +34,15 @@ export class AdminApproveClaimComponent implements OnInit {
     //this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]);
     //this.router.navigate(['ApproveClaim']);
     this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]).subscribe((data)=>{console.log(data)});
+    this.mailservice.ClaimApproval(this.unapprovedclaims[i].PolicyNo).subscribe((data)=>{
+      if(data=="mail sent"){
+        alert("Claim Approved!");
+      }
+      else{
+        alert("Error! Try again");
+      }
+      });
+
     location.reload();
   }
 

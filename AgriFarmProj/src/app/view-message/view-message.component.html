@@ -24,7 +24,7 @@
                             <td> {{m.RequestType}} </td>
                             <td> {{m.Message}} </td>
                             <td> {{m.Status}} </td>
-                            <td *ngIf="m.status=='Not Seen'"> <button class="btn btn-success" data-toggle="modal" data-target="#reply" (click)="Reply(m.Email,m.RequestType)">Reply</button> </td>
+                            <td *ngIf="m.Status=='Not Seen'"> <button class="btn btn-success" data-toggle="modal" data-target="#reply" (click)="Reply(m.Email,m.RequestType)">Reply</button> </td>
                         </tr>
                     </tbody>
                 </table>

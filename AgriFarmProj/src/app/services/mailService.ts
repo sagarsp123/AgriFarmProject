@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 
 @Injectable()
 export class MailService{
-    url="https://localhost:44322/api/mail/"; 
+    url="https://localhost:44329/"; 
 
     constructor(private http:HttpClient){
 
@@ -13,7 +13,8 @@ export class MailService{
     sendMail(mail:NgForm){
         console.log(mail.value);
         const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
-        return this.http.post(this.url,JSON.stringify(mail.value),httpheader);
+        debugger;
+        return this.http.post(this.url+"api/mail/",JSON.stringify(mail.value),httpheader);
     }
 
     changestatus(mail:string,id:string){
@@ -21,4 +22,12 @@ export class MailService{
         //debugger;
         return this.http.put(this.url+"?mail="+mail+"&id="+id,httpheader);
     }
+    ApprovalMail(usermail:string){
+        return this.http.post(this.url+"approvalmail?to="+usermail,"");
+    }
+
+    ClaimApproval(policy:number){
+        return this.http.post(this.url+"claimapproval?policyno="+policy,"");
+    }
+
 }

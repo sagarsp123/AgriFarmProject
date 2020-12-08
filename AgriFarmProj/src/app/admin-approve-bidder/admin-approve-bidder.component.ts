@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import {AdminApproveBidderService} from '../services/admin-approve-bidder.service';
+import { MailService } from '../services/MailService';
 
 @Component({
   selector: 'app-admin-approve-bidder',
@@ -10,7 +11,7 @@ import {AdminApproveBidderService} from '../services/admin-approve-bidder.servic
 export class AdminApproveBidderComponent implements OnInit {
 
   unapprovedbidders:any=[];
-  constructor(private adminapprovebiddersService:AdminApproveBidderService) { }
+  constructor(private adminapprovebiddersService:AdminApproveBidderService,private mailservice:MailService) { }
 
   ngOnInit(): void {
     this.fetchUnapprovedBidders();
@@ -27,6 +28,16 @@ export class AdminApproveBidderComponent implements OnInit {
     }
     console.log(this.unapprovedbidders[i]);
     this.adminapprovebiddersService.updateBidder(this.unapprovedbidders[i]).subscribe((data)=>{console.log(data)});
+    this.mailservice.ApprovalMail(this.unapprovedbidders[i].FarmerEmail).subscribe((data)=>{
+      if(data=="mail sent"){
+        alert("Bidder Approved!");
+      }
+      else{
+        alert("Error! Try again");
+      }
+    });  
+
+    
     this.ngOnInit();
     //location.reload();
   }
