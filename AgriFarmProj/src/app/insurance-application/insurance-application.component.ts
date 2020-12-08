@@ -173,7 +173,7 @@ insurancedetails: InsuranceApp
 
   InsuranceData(){
     const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
-    this.http.post('https://localhost:44322/api/ApplyInsurance/',JSON.stringify(this.DetailsOfInsurance[0]),httpheader)
+    this.http.post('https://localhost:44380/api/ApplyInsurance/',JSON.stringify(this.DetailsOfInsurance[0]),httpheader)
     .subscribe((data)=>
     {console.log(data);
       if(data=="OK") alert('Insurance applied successfully');

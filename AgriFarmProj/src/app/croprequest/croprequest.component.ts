@@ -61,7 +61,7 @@ OnSubmit(CropType,CropName,Quantity,FertilizerType,Image){
       FertilizerType=null;
       Quantity=0;
       Image.value = null;
-      this.imageUrl = "/assets/img/default-image.png";
+      this.imageUrl = "/assets/image/default-image.png";
     }
   );
  }

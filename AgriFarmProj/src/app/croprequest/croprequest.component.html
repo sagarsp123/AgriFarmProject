@@ -2,7 +2,7 @@
 <p class="intro">Welcome To Crop Request Page</p>
 <br>
 <br>
-
+<div class ="wrk">
 <div class="container">
 <form role="form" #crpreq="ngForm" (ngSubmit)="OnSubmit(CropType,CropName,Quantity,FertilizerType,SoilPhCertificate)">
     <div class="form-group">
@@ -16,7 +16,7 @@
 
     <div class="form-group">
         <label for="CropName"> Crop Name :</label>
-          <select class="form-control-input" name="CropName" id="crop-name" [(ngModel)]="CrpReq.CropName" #CropName="ngModel" required> 
+          <select class="form-control" name="CropName" id="crop-name" [(ngModel)]="CrpReq.CropName" #CropName="ngModel" required> 
          <option selected>Default</option>
          <optgroup *ngFor = 'let grp of dataSource' label="{{grp.group}}">
         <option *ngFor = 'let item of grp.items' [value]="item.id">{{item.name}}</option> 
@@ -36,7 +36,7 @@
     <label for="file">Ph Certificate</label>
     
     <input type="file" class="form-control" id="soil-ph-certificate" name="SoilPhCertificate" [(ngModel)]="CrpReq.SoilPhCertificate" #SoilPhCertificate="ngModel" (change)="handleFileInput($event.target.files)">
-    <img [src]="imageUrl"  style="width:250px;height:200px">
+    <!--<img [src]="imageUrl"  style="width:250px;height:200px">-->
     </div>
     <br>
 
@@ -49,5 +49,8 @@
 </form>
 
 </div>
-
-Angular Generated Form MOdel : {{CrpReq.SoilPhCertificate}};
+</div>
+<br>
+<br>
+<br>
+<br>
