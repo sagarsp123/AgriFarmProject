@@ -29,7 +29,10 @@ export class AdminApproveAuctionComponent implements OnInit {
     console.log(this.unapprovedbids[i]);
     //this.adminapproveclaimservice.updateClaim(this.unapprovedclaims[i]);
     //this.router.navigate(['ApproveClaim']);
-    this.adminapproveauctionservice.finaliseBid(this.unapprovedbids[i]).subscribe((data)=>{console.log(data)});
+    this.adminapproveauctionservice.finaliseBid(this.unapprovedbids[i]).subscribe((data)=>{console.log(data);
+    if(data=="OK") alert("Auction Approved");
+    location.reload();
+    });
   }
 
 

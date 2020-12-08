@@ -32,13 +32,14 @@ export class AdminApproveFarmerComponent implements OnInit {
     this.mailservice.ApprovalMail(this.unapprovedfarmers[i].FarmerEmail).subscribe((data)=>{
       if(data=="mail sent"){
         alert("Farmer Approved!");
+        location.reload();
       }
       else{
         alert("Error! Try again");
       }
     });
   
-    location.reload();
+    //location.reload();
     //this.router.navigate(['ApproveFarmer']);
   }
 

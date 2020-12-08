@@ -9,5 +9,21 @@
 }
 
 .form1{
-    float:left;
+    float:center;
+    /* padding-left: 150px; */
+}
+
+.center {
+    margin: auto;
+    width: 60%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+  }
+
+.container{
+    text-align: center;
+}
+
+#Season,#CropName{
+    width: 50%;
 }

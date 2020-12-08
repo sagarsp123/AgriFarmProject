@@ -37,13 +37,14 @@ export class AdminApproveClaimComponent implements OnInit {
     this.mailservice.ClaimApproval(this.unapprovedclaims[i].PolicyNo).subscribe((data)=>{
       if(data=="mail sent"){
         alert("Claim Approved!");
+        location.reload();
       }
       else{
         alert("Error! Try again");
       }
       });
 
-    location.reload();
+    //location.reload();
   }
 
 

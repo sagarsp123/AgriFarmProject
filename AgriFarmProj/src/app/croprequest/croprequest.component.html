@@ -4,7 +4,7 @@
 <br>
 <div class ="wrk">
 <div class="container">
-<form role="form" #crpreq="ngForm" (ngSubmit)="OnSubmit(CropType,CropName,Quantity,FertilizerType,SoilPhCertificate)">
+<form role="form" #crpreq="ngForm" (ngSubmit)="OnSubmit(CropType,CropName,Quantity,FertilizerType,SoilPhCertificate); crpreq.reset()">
     <div class="form-group">
         <label for="CropType"> Crop Type :</label>
           <select class="form-control" name="CropType" id="crop-type" [(ngModel)]="CrpReq.CropType" #CropType="ngModel">
@@ -45,7 +45,7 @@
         <input type="number" class ="form-control" id="quantity" name="Quantity" [(ngModel)]="CrpReq.Quantity" #Quantity="ngModel">
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="SoilPhCertificate.value == ''">Submit</button>
+    <button type="submit" class="contact-button" style="background:green;" [disabled]="SoilPhCertificate.value == ''">Submit</button>
 </form>
 
 </div>

@@ -4,7 +4,7 @@ import { NgForm } from '@angular/forms';
 
 @Injectable()
 export class MailService{
-    url="https://localhost:44329/"; 
+    url="https://localhost:44365/"; 
 
     constructor(private http:HttpClient){
 

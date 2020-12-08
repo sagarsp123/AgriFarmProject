@@ -1,8 +1,8 @@
 <br>
 <br>
 <br>
-<p style="text-align: center;">Welcome to Farmer Market Place</p>
-<table border ="1" cellpadding="21" cellspacing="50" width="100%"  class ="tt2">
+<h2><p style="text-align: center;">Welcome to Farmer Market Place</p></h2>
+<!-- <table border ="1" cellpadding="21" cellspacing="50" width="100%"  class ="tt2">
         <tr>
             <th>CropType</th>
             <th>CropName</th>
@@ -20,4 +20,41 @@
             <td>{{f.BidCloseTime}}</td>
             <td>{{f.CurrentBidPrice}}</td>
         </tr>
-</table>
+</table> -->
+
+
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="text-center">
+                    <h3></h3>
+                </div> -->
+            </div>
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                        <th>CropType</th>
+            <th>CropName</th>
+            <th>InitalPrce</th>
+            <th>Previous Bid Price</th>
+            <th>Auction Date</th>
+            <th>Current Bid Price</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let f of farmermarketdetails">
+                            <td>{{f.CropType}}</td>
+                            <td>{{f.CropName}}</td>
+                            <td>{{f.InitalPrce}}</td>
+                            <td>{{f.PreviousBidPrice}}</td>
+                            <td>{{f.BidCloseTime|date:'shortDate'}}</td>
+                            <td>{{f.CurrentBidPrice}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        </div>
+    </div>
+</div>

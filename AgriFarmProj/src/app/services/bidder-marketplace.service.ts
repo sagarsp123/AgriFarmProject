@@ -18,11 +18,11 @@ export class BidderMarketPlaceService{
     getCurrentCropById(){
         //debugger;
         //return this.http.get('https://localhost:44365/api/GetCropById/?id=4');
-        return this.http.get('https://localhost:44322/api/GetCropById/?id='+sessionStorage.getItem('auctionid'));
+        return this.http.get('https://localhost:44365/api/GetCropById/?id='+sessionStorage.getItem('auctionid'));
     }
 
     PlaceBid(latestbid){
-        return this.http.post('https://localhost:44322/api/PlaceBid/?id='+sessionStorage.getItem('auctionid')+"&bidderID="+sessionStorage.getItem('bid')+'&latestbid='+latestbid,'');
+        return this.http.post('https://localhost:44365/api/PlaceBid/?id='+sessionStorage.getItem('auctionid')+"&bidderID="+sessionStorage.getItem('bid')+'&latestbid='+latestbid,'');
     }
 
 }

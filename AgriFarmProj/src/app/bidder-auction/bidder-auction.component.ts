@@ -54,7 +54,10 @@ export class BidderAuctionComponent implements OnInit {
       alert("Value less than or equal to the current bid price");
     }
     else{
-      this.biddermarketplaceservice.PlaceBid(this.DataForm.BidPrice).subscribe((data)=>{console.log(data)});
+      this.biddermarketplaceservice.PlaceBid(this.DataForm.BidPrice).subscribe((data)=>{console.log(data);
+      if(data=="OK") alert("Bid Successfully Placed");
+      location.reload();
+      });
     }
    // formdata.BidPrice
   }

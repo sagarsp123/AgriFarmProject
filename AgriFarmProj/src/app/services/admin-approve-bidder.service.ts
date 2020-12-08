@@ -5,7 +5,7 @@ import {BidderApproval} from '../models/bidderapproval.model';
 
 @Injectable()
 export class AdminApproveBidderService{
-    url="https://localhost:44329/api/";
+    url="https://localhost:44365/api/";
     constructor(private http: HttpClient) { }
     GetUnapprovedBidders(){
         //debugger;

@@ -3,16 +3,16 @@
         <div class="container">
             <h1 style="color: #fff;">INSURANCE APPLICATION</h1>
             <div class="row">
-                <div class="col-lg-6">
+                <div class="center" style="text-align:center">
                     <h2 style="text-align: center;">Insurance Application Form</h2>
 
                     <form #insuranceapp="ngForm" (ngSubmit)="onSubmit(insuranceapp)">
                         
                         <div class="form-group">
                             <label for="Season">Enter Season</label>
-
+                            &nbsp;&nbsp;&nbsp;&nbsp;
                             <select #Season="ngModel" class="form-control-input" [(ngModel)]=insurancedetails.Season
-                                id="Season" name="Season" required>
+                                id="Season" name="Season" required > 
                                 <option value="KHARIF">KHARIF</option>
                                 <option value="RABI">RABI</option>
                                 <option value="HORTICULTURE">HORTICULTURE</option>
@@ -21,9 +21,9 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="Year">Enter Year</label>
+                            <label for="Year">Enter Year</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input #Year="ngModel" type="text" class="form-control-input"
-                                [(ngModel)]=insurancedetails.Year id="Year" name="Year" required>
+                                [(ngModel)]=insurancedetails.Year id="Year" name="Year" required size="45">
 
                             <div *ngIf="Year.invalid && (Year.dirty|| Year.touched)">
                                 <div *ngIf="Year.errors.required" style="color:red;" class="help-block with-errors">Year
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="CropName">Enter Crop</label>
+                            <label for="CropName">Enter Crop</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <select class="form-control-input" name="CropName" id="CropName" [(ngModel)]="insurancedetails.CropName" #CropName="ngModel" required>
                              <optgroup *ngFor = 'let grp of dataSource' label="{{grp.group}}">
                                 <option *ngFor = 'let item of grp.items' [value]="item.id">{{item.name}}</option> 
@@ -42,9 +42,9 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="Area">Enter Area</label>
-                            <input #Area="ngModel" type="number" class="form-control-input"
-                                [(ngModel)]=insurancedetails.Area id="Area" name="Area" required>
+                            <label for="Area">Enter Area in Hectares</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <input #Area="ngModel" type="text" class="form-control-input"
+                                [(ngModel)]=insurancedetails.Area id="Area" name="Area" required size="50">
 
                             <div *ngIf="Area.invalid && (Area.dirty|| Area.touched)">
                                 <div *ngIf="Area.errors.required" style="color:red;" class="help-block with-errors">Area
@@ -53,22 +53,27 @@
                             </div>
                         </div>
 
+
+
                         <div class="form-message">
                             <div id="lmsgSubmit" class="h3 text-center hidden"></div>
                         </div>
 
-                        <div class="item">
-                            <input type="reset" class="form-control-reset-button" value="RESET">
-                        </div>
+                        <div class="form1">
+                            <center><button type="reset" class="contact-button">Reset</button>
+                             <!-- </div>
+                             
+                             <div class="form1"> -->
+                                 &nbsp;&nbsp;&nbsp;&nbsp;
+                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                 <button type="submit" class="contact-button" style="background:green;">Submit</button></center> 
+                          </div>
 
-                        <div class="item">
-                            <button type="submit" class="form-control-submit-button">Submit</button>
-                        </div>
 
                     </form>
                     
                     <br><br><br><br><br>
-                    <table border="1" width="100%" cellspacing="0" cellpadding>
+                    <!-- <table border="1" width="100%" cellspacing="0" cellpadding>
                         <tr>
                             <th>Insurance Company</th>
                             <th>Sum Insured(per Hectare)</th>
@@ -89,10 +94,51 @@
                     </table>
 
                         <br><br><br><br>
-                        <button type="submit" class="form-control-submit-button" (click)="InsuranceData()">Apply</button><br><br>
+                        <button type="submit" class="form-control-submit-button" (click)="InsuranceData()">Apply</button><br><br> -->
                     
                 </div>
             </div>
         </div>
     </div>
 </span>
+
+
+
+<div class="contact" id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-center">
+                    <h3>Approve Farmer</h3>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                        <th>Insurance Company</th>
+                            <th>Sum Insured(per Hectare)</th>
+                            <th>Premium Amount</th>
+                            <th>Crop Name</th>
+                            <th>Area</th>
+                            <th>Sum Insured</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of DetailsOfInsurance">
+                            <td>{{data.CompanyName}}</td>
+                            <td>{{data.SumAssuredPerHec}}</td>
+                            <td>{{data.Premium}}</td>
+                            <td>{{data.CropName}}</td>
+                            <td>{{data.Area}}</td>
+                            <td>{{data.SumAssured}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+            <div class="container">
+                <button type="submit" class="btn btn-primary" (click)="InsuranceData()" style="text-align: center;">Apply</button><br><br>
+            </div>
+            
+        </div>
+    </div>
+</div>

@@ -31,6 +31,7 @@ export class AdminApproveBidderComponent implements OnInit {
     this.mailservice.ApprovalMail(this.unapprovedbidders[i].FarmerEmail).subscribe((data)=>{
       if(data=="mail sent"){
         alert("Bidder Approved!");
+        location.reload();
       }
       else{
         alert("Error! Try again");

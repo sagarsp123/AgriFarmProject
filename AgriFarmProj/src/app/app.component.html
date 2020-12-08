@@ -18,6 +18,7 @@
 
 
                     <li *ngIf="!(loginsessionuser)"><a routerLink="Login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+                    <li *ngIf="!(loginsessionuser)"><a routerLink="RegistrationDashboard"><span class="glyphicon glyphicon-user"></span>&nbsp; Register</a></li>
                     <li *ngIf="loginsessionuser"><a>Hello {{username}} </a></li>
                     <li *ngIf="loginsessionuser"><a (click)="logout()"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Logout</a></li>
 

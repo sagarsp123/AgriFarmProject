@@ -24,8 +24,9 @@ export class ClaiminsuranceComponent implements OnInit {
      CauseOfClaim:null,
      PolicyNo:null,
   };
+  ldate =new Date(this.insclaim.DateOfLoss);
   submitted =false;
-
+  currentdate = new Date();
   ngOnInit(): void {
     this.showinsurance();
   }
@@ -40,7 +41,7 @@ showinsurance()
 claimRequest(container :NgForm)
   {
     console.log(this.insclaim);
-    if(this.insclaim.DateOfClaim<this.insclaim.DateOfLoss){
+    if(this.insclaim.DateOfClaim<this.insclaim.DateOfLoss || this.ldate>this.currentdate){
       alert("Invalid dates ");
       alert(" Date of Loss Must be less than Date of Claim");
       container.reset();
@@ -50,7 +51,7 @@ claimRequest(container :NgForm)
     .subscribe((data)=>{console.log(data);});
     container.reset();
     alert("Claim Request Send");
+    location.reload();
   }
-  alert("Process complete");
   }  
 }

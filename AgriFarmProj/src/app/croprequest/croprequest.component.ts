@@ -52,9 +52,11 @@ export class CroprequestComponent implements OnInit {
 }
 
 OnSubmit(CropType,CropName,Quantity,FertilizerType,Image){
+  if(CropType.value!=null && CropName.value!=null && FertilizerType!=null && Quantity.value!=0){
   console.log(sessionStorage.getItem("fid"));
   this.crservice.postFile(CropType.value,CropName.value,Quantity.value,FertilizerType.value,this.fileToUpload).subscribe(
     data =>{
+      alert("Crop Request Submitted Successfully!");
       console.log('done');
       CropType.value = null;
       CropName.value = null;
@@ -62,8 +64,11 @@ OnSubmit(CropType,CropName,Quantity,FertilizerType,Image){
       Quantity=0;
       Image.value = null;
       this.imageUrl = "/assets/image/default-image.png";
+      alert("Crop Request Submitted Successfully!");
     }
   );
+  }
+  else alert("Please fill the required details");
  }
  dataSource=   [
   {

@@ -5,7 +5,7 @@
 <br>
 <br>
 <br>
-<table border="1" width="100%" cellspacing="0" cellpadding>
+<!-- <table border="1" width="100%" cellspacing="0" cellpadding>
     <tr>
         <th>BiddingID</th>
         <th>CropType</th>
@@ -25,7 +25,43 @@
         <td>{{b.BidCloseTime}}</td>
         <td><button type="button" (click)="gotoauction(b.Biddingid)">Go to Auction</button></td>
     </tr>
-</table>
+</table> -->
+
+
+<div class="contact" id="contact">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="text-center">
+                  <h3>Approve Farmer</h3>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <table class="table table-hover">
+                  <thead>
+                    <th>BiddingID</th>
+                    <th>CropType</th>
+                    <th>CropName</th>
+                    <th>InitalPrce</th>
+                    <th>CurrentBidPrice</th>
+                    <th>BidCloseTime</th>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let b of currentbids">
+                      <td>{{b.Biddingid}}</td>
+                      <td>{{b.CropType}}</td>
+                      <td>{{b.CropName}}</td>
+                      <td>{{b.InitalPrce}}</td>
+                      <td>{{b.CurrentBidPrice}}</td>
+                      <td>{{b.BidCloseTime}}</td>
+                      <td><button type="button" class="contact-button" style="background:green;" (click)="gotoauction(b.Biddingid)">Go to Auction</button></td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>    
+      </div>
+  </div>
+</div>
 
 
 
@@ -69,23 +105,3 @@
     </div>
 
 </div> -->
-
-<!-- <div class="col-md-3 col-xl-4" *ngFor="let b of currentbids" >
-    <div class="card widget-statstic-card"  >
-      <div class="card-header">
-        <div class="card-header-left">
-          <h5 class="d-inline-block">{{b.CropName}}</h5>
-        </div>
-      </div>
-      <div class="card-block">
-        <div class="text-left">
-          <h5 class="d-inline-block">
-            <p>{{b.Biddingid}}</p>
-            <p>{{b.InitalPrce}}</p>
-            <p>{{b.CurrentBidPrice}}</p>
-          </h5>
-        </div>
-      </div>
-    </div>
-  </div>
- -->

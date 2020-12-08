@@ -12,7 +12,7 @@
                         <th>Claim id</th>
                         <th>Policy No</th>
                         <th>Cause Of Claim</th>
-                        <th>Date Of Loss</th>
+                        <th>Date Of Incident</th>
                         <th>Date Of Claim</th>
                         <th>Amount Claimed</th>
                         <th>Action</th>
@@ -22,11 +22,11 @@
                             <td>{{c.Cliamid}}</td>
                             <td>{{c.PolicyNo}}</td>
                             <td>{{c.CauseOfClaim}}</td>
-                            <td>{{c.DateOfLoss}}</td>
-                            <td>{{c.DateOfClaim}}</td>
+                            <td>{{c.DateOfLoss|date:'shortDate'}}</td>
+                            <td>{{c.DateOfClaim|date:'shortDate'}}</td>
                             <td>{{c.AmountClaimed}}</td>
                             <td>{{c.SumAssured}}</td>
-                            <td><button type="button" class="btn btn-success" (click)="approveClaim(c.Cliamid)">Approve Claim</button></td>
+                            <td><button type="button" class="contact-button" style="background:green;" (click)="approveClaim(c.Cliamid)">Approve Claim</button></td>
                         </tr>
                     </tbody>
                 </table>
