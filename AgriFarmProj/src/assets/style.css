@@ -72,6 +72,22 @@ a {
     float: left;
 }
 
+.banner3 {
+    background-attachment: fixed;
+    background-color: #077542;
+    background-image: url(images/adminbg2.jpg);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    cursor: default;
+    text-align: center;
+    width: 100%;
+    float: left;
+}
+
+
+
 .bg-overlay {
     padding: 280px 0 220px;
     background-color: RGBA(15, 5, 20, 0.84);
@@ -80,6 +96,30 @@ a {
 .bg-overlay1 {
     background-color: RGBA(15, 5, 20, 0.84);
 }
+
+.bg-overlay2 {
+    padding: 80px 0 20px;
+    background-color: RGBA(15, 5, 20, 0.84);
+}
+
+
+th,td{
+    font-size: 18px;
+}
+
+
+.contact-button2 {
+    border: none;
+    color: #ffffff;
+    text-decoration: none;
+    /* display: inline-block; */
+    border-radius: 35px 35px 35px 35px;
+    font-size: 20px;
+    /* margin-right:50px; */
+    background-color: #EB233C;
+}
+
+
 
 .banner-text h2 {
     font-size: 50px;
@@ -386,7 +426,7 @@ a {
 /*-----Contact Starts-------*/
 
 .contact {
-    background-color: rgba(204, 204, 204, 0.15);
+    /* background-color: rgba(204, 204, 204, 0.15); */
     padding: 50px 0px;
     float: left;
     width: 100%;

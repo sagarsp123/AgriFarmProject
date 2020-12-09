@@ -1,4 +1,6 @@
 <!-- Contact -->
+<div class="banner3" id="banner3">
+    <div class="bg-overlay2">
 <div class="contact" id="contact">
     <div class="container">
         <div class="row">
@@ -8,7 +10,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <table class="table table-hover">
+                <table class="table">
                     <thead>
                         <th>Email Id</th>
                         <th>Contact Name</th>
@@ -35,9 +37,9 @@
     <div class="modal fade" id="reply" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="color: red">
                     <center>
-                        <h3 class="modal-title" id="myModalLabel">Reply Here!</h3>
+                        <h2 class="modal-title" id="myModalLabel">Reply Here!</h2>
                     </center>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -47,7 +49,7 @@
                     <div class="contact-form">
                         <form role="form" #replyform="ngForm" (ngSubmit)="SendMail(replyform)">
                             <div>
-                                <label for="From">Email From: &nbsp; &nbsp; </label><br>
+                                <label for="From" style="color:black">Email From: &nbsp; &nbsp; </label><br>
                                 <input type="text" class="form-control" id="email" name="From" [(ngModel)]=reply.From #From="ngModel" required email>
                             </div><br>
                             <!-- Email validation -->
@@ -61,7 +63,7 @@
                             </div><br>
 
                             <div>
-                                <label for="To">Email To: &nbsp; &nbsp; </label><br>
+                                <label for="To" style="color:black">Email To: &nbsp; &nbsp; </label><br>
                                 <input type="text" class="form-control" id="email" name="To" [(ngModel)]=reply.To #To="ngModel" required email>
                             </div><br>
                             <!-- Email validation -->
@@ -76,7 +78,7 @@
 
 
                             <div>
-                                <label for="Subject">Subject: &nbsp; &nbsp; </label><br>
+                                <label for="Subject" style="color:black">Subject: &nbsp; &nbsp; </label><br>
                                 <input type="text" class="form-control" id="name" name="Subject" [(ngModel)]=reply.Subject #Subject="ngModel" required>
                             </div><br>
                             <!-- Email validation -->
@@ -88,7 +90,7 @@
 
 
                             <div>
-                                <label for="Body">Enter Message: &nbsp; &nbsp; </label><br>
+                                <label for="Body" style="color:black">Enter Message: &nbsp; &nbsp; </label><br>
                                 <textarea class="form-control " placeholder="Message" rows="4" name="Body" [(ngModel)]=reply.Body #Body="ngModel" required></textarea>
                             </div>
                             <!-- Message validation -->
@@ -109,4 +111,7 @@
             </div>
         </div>
     </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </div>

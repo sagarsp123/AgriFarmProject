@@ -27,7 +27,6 @@ export class BidderService
     formData.append('BidderPassword', BidderPassword);
     formData.append('AccountNo', AccountNo);
     formData.append('IFSC_Code', IFSC_Code);
-    formData.append('AccountNo', AccountNo);
     
     return this.http
       .post(endpoint, formData);

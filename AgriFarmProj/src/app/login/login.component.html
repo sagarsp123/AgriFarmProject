@@ -1,14 +1,5 @@
-<div>
-    <div>
-        <center>
-            <h2></h2>
-        </center>
-    </div>
-    <div>
-
-    </div>
-</div>
-
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
 <!-- Contact -->
 <div class="contact" id="contact">
     <div class="container">
@@ -19,11 +10,12 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="contact-form">
+                <div class="contact-form1">
                     <form role="form" #loginform="ngForm" (ngSubmit)="OnLogin(loginform)">
                         <div>
                             <label for="Email">Enter Email-id: </label><br>
-                            <input type="text" class="form-control" id="email" name="Email" [(ngModel)]=login.Email #Email="ngModel" placeholder="Email Id" required email>
+                            <input type="text" class="form-control" id="email" name="Email" [(ngModel)]=login.Email #Email="ngModel" placeholder="Email Id" 
+                            required email style="color:white;">
                         </div><br>
                         <!-- email validation -->
                         <div *ngIf="!Email?.valid && (Email?.dirty || Email?.touched)" class="error">
@@ -38,7 +30,7 @@
 
                         <div>
                             <label for="Password">Enter Password: </label><br>
-                            <input type="password" class="form-control" id="name" name="Password" [(ngModel)]=login.Password #Password="ngModel" placeholder="Password" required>
+                            <input type="password" class="form-control" id="name" name="Password" [(ngModel)]=login.Password #Password="ngModel" placeholder="Password" required style="color:white;">
                         </div><br>
                         <!-- password validation -->
                         <div *ngIf="!Password?.valid && (Password?.dirty || Password?.touched)" class="error">
@@ -72,9 +64,14 @@
 
             </div>
             <div class="col-md-6">
-                <br><br><br><br>
+                <br><br><br>
+                
                 <img src="assets/images/login.jpg" alt="about" width="90%" height="90%" />
             </div>
         </div>
     </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br>
+</div>
 </div>

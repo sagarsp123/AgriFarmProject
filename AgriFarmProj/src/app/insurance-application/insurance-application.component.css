@@ -27,3 +27,7 @@
 #Season,#CropName{
     width: 50%;
 }
+
+label{
+    font-size:20px;
+}

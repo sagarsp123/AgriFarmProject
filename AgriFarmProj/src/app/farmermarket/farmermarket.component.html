@@ -1,26 +1,8 @@
-<br>
-<br>
-<br>
-<h2><p style="text-align: center;">Welcome to Farmer Market Place</p></h2>
-<!-- <table border ="1" cellpadding="21" cellspacing="50" width="100%"  class ="tt2">
-        <tr>
-            <th>CropType</th>
-            <th>CropName</th>
-            <th>InitalPrce</th>
-            <th>Previous Bid Price</th>
-            <th>Bid Close Time</th>
-            <th>Current Bid Price</th>
-        </tr>
 
-        <tr *ngFor="let f of farmermarketdetails">
-            <td>{{f.CropType}}</td>
-            <td>{{f.CropName}}</td>
-            <td>{{f.InitalPrce}}</td>
-            <td>{{f.PreviousBidPrice}}</td>
-            <td>{{f.BidCloseTime}}</td>
-            <td>{{f.CurrentBidPrice}}</td>
-        </tr>
-</table> -->
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
+
+<h2><p style="text-align: center;">Welcome to Farmer Market Place</p></h2>
 
 
 <div class="contact" id="contact">
@@ -32,23 +14,23 @@
                 </div> -->
             </div>
             <div class="col-md-12">
-                <table class="table table-hover">
+                <table class="table">
                     <thead>
-                        <th>CropType</th>
-            <th>CropName</th>
-            <th>InitalPrce</th>
-            <th>Previous Bid Price</th>
-            <th>Auction Date</th>
-            <th>Current Bid Price</th>
+                        <th style="text-align:center">CropType</th>
+            <th style="text-align:center">CropName</th>
+            <th style="text-align:center">Quantity</th>
+            <th style="text-align:center">Minimum Sale Price</th>
+            <th style="text-align:center">Auction Date</th>
+            <th style="text-align:center">Selling Price</th>
                     </thead>
                     <tbody>
                         <tr *ngFor="let f of farmermarketdetails">
                             <td>{{f.CropType}}</td>
                             <td>{{f.CropName}}</td>
-                            <td>{{f.InitalPrce}}</td>
-                            <td>{{f.PreviousBidPrice}}</td>
+                            <td>{{f.Quantity}} Quintals</td>
+                            <td>₹ {{f.InitalPrce}}</td>
                             <td>{{f.BidCloseTime|date:'shortDate'}}</td>
-                            <td>{{f.CurrentBidPrice}}</td>
+                            <td>₹ {{f.CurrentBidPrice}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -57,4 +39,10 @@
             
         </div>
     </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div>
 </div>

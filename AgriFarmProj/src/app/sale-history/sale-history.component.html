@@ -1,26 +1,31 @@
 <!-- Contact -->
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
 <div class="contact" id="contact">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
+        <div>
+            <div>
                 <div class="text-center">
                     <h3>Sale History</h3>
                 </div>
             </div>
-            <div class="col-md-12">
-                <table class="table table-hover">
+            <div>
+                <table class="table">
                     <thead>
-                        <th>Crop Name</th>
-                        <th>Quantity</th>
-                        <th>MinSalePrice</th>
-                        <th>Price</th>
+                        <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                        <th style="text-align: center">  Date of Sale</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Crop Name</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Quantity</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Minimum Sale Price</th>
+                        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Final Price</th>
                     </thead>
                     <tbody>
                         <tr *ngFor="let s of sale">
+                            <td>{{s.SaleDate| date:'shortDate'}}</td>
                             <td>{{s.CropName}}</td>
-                            <td>{{s.Quantity}}</td>
-                            <td>{{s.MinSalePrice}}</td>
-                            <td>{{s.Price}}</td>
+                            <td>{{s.Quantity}} Quintals</td>
+                            <td>₹ {{s.MinSalePrice}}</td>
+                            <td>₹ {{s.Price}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -28,4 +33,7 @@
 
         </div>
     </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
 </div>

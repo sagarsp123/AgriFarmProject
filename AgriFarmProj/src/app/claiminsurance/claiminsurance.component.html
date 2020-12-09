@@ -1,8 +1,5 @@
-<br>
-<br>
-<br>
-<br>
-<br>
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
 
 <div class="contact" id="contact">
     <div class="container">
@@ -14,14 +11,14 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <table class="table table-hover">
+                <table class="table">
                     <thead>
-                        <th>PolicyNo</th>
-            <th>Season</th>
-            <th>Year</th>
-            <th>Crop</th>
-            <th>SumInsured</th>
-            <th>Date Of Insurance</th>
+                        <th style="text-align: center">PolicyNo</th>
+            <th style="text-align: center">Season</th>
+            <th style="text-align: center">Year</th>
+            <th style="text-align: center">Crop</th>
+            <th style="text-align: center">SumInsured</th>
+            <th style="text-align: center">Date Of Insurance</th>
                     </thead>
                     <tbody>
                         <tr *ngFor="let f of listinsurance">
@@ -29,7 +26,7 @@
                             <td>{{f.Season}}</td>
                             <td>{{f.Year}}</td>
                             <td>{{f.Crop}}</td>
-                            <td>{{f.SumInsured}}</td>
+                            <td>₹ {{f.SumInsured}}</td>
                             <td>{{f.DateOfInsurance|date:'shortDate'}}</td>
                         </tr>
                     </tbody>
@@ -48,7 +45,7 @@
                     <div class ="form-group">
                         <label for="PolicyNo">Policy Number</label>
                         <input type="number" #PolicyNo="ngModel" class="form-control" 
-                        [(ngModel)]=insclaim.PolicyNo id="PolicyNo" name="PolicyNo" required>
+                        [(ngModel)]=insclaim.PolicyNo id="PolicyNo" name="PolicyNo" required style="color:white">
                         <div *ngIf="PolicyNo.value === null">
                             <div style="color: red;">Policy Number required</div>
                         </div>
@@ -58,7 +55,7 @@
                     <div class ="form-group">
                         <label for="CauseOfClaim">Cause Of Claim</label>
                         <input type="text" #CauseOfClaim="ngModel" class="form-control" 
-                        [(ngModel)]=insclaim.CauseOfClaim id="CauseOfClaim" name="CauseOfClaim" required>
+                        [(ngModel)]=insclaim.CauseOfClaim id="CauseOfClaim" name="CauseOfClaim" required style="color:white">
                         <div *ngIf="CauseOfClaim.invalid && (CauseOfClaim.dirty || CauseOfClaim.touched)">
                             <div *ngIf="CauseOfClaim.errors.required " style="color: red;">
                             Loss Cause required</div>
@@ -68,7 +65,7 @@
                     <div class ="form-group">
                         <label for="AmountClaimed">Claim Amount</label>
                         <input type="number"  class="form-control" 
-                        [(ngModel)]=insclaim.AmountClaimed #AmountClaimed="ngModel" id="AmountClaimed" name="AmountClaimed" required> 
+                        [(ngModel)]=insclaim.AmountClaimed #AmountClaimed="ngModel" id="AmountClaimed" name="AmountClaimed" required style="color:white"> 
                         <div *ngIf="AmountClaimed.value <= 1">
                             <div style="color: red;">Amount should be greater than 0</div>
                         </div> 
@@ -78,7 +75,7 @@
                         <label for ="DateOfLoss"> Incident Date</label> 
                         <input type="date"  #DateOfLoss="ngModel" class ="form-control" 
                         [(ngModel)]=insclaim.DateOfLoss id="DateOfLoss" name="DateOfLoss" required 
-                        max="2020-12-31">
+                        max="2020-12-31" style="color:white">
                     </div>
                 
                     <br>
@@ -86,7 +83,7 @@
                         <label for ="DateOfClaim"> Claim Date</label> 
                         <input type="date"  #DateOfClaim="ngModel" class ="form-control" 
                         [(ngModel)]=insclaim.DateOfClaim id="DateOfClaim" name="DateOfClaim" required
-                        max="2020-12-31">        
+                        max="2020-12-31" style="color:white">        
                     </div>
                     <br>
                 <button type="submit" class="contact-button" style="background:green;" >Submit</button>
@@ -102,6 +99,10 @@
         </div>
     </div>
 </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div></div>
 
     <!-- <img src="/assets/images/claim.jpg" alt="about" width=25% height=25%/> -->
 

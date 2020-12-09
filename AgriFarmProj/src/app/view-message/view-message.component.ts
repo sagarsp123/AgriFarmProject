@@ -15,6 +15,8 @@ export class ViewMessageComponent implements OnInit {
   reply:any={};
   btndisable=false;
   mail:EmailReply;
+  test:boolean=false;
+  sentemail:string=null;
   adminid=sessionStorage.getItem("aid");
   constructor(private cot:ContactService,private router:Router,private mailservice:MailService) {
     this.mail={
@@ -43,15 +45,24 @@ export class ViewMessageComponent implements OnInit {
   SendMail(replyform:NgForm){
     console.log(replyform.value);
     this.mailservice.sendMail(replyform).subscribe((data)=>{
+      console.log(data);
       if(data["Item1"]=="mail sent"){ 
-        this.mailservice.changestatus(data["Item2"],this.adminid).subscribe((data)=>{console.log(data);})
+        this.test=true;
+        this.sentemail=data["Item2"];
+        //this.mailservice.changestatus(data["Item2"]).subscribe((data)=>{console.log(data);})
         // debugger;
-        alert("Mail sent!");
-        window.location.reload();
+        //alert("Mail sent!");
+        //window.location.reload();
       }
       else{
         alert("Error");
       }
+      if(this.test) {
+        this.mailservice.changestatus(this.sentemail).subscribe((data)=>{console.log(data);})
+
+        console.log(this.sentemail);
+      }
+        alert("Mail sent!");
     })
   }
 }

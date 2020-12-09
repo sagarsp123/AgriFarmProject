@@ -12,6 +12,7 @@ import { ClaimRequestService } from '../services/claimrequestservice';
 export class ClaiminsuranceComponent implements OnInit {
   response: any;
   listinsurance: any=[];
+  
   constructor(private inservice:ClaimRequestService) 
   {
    }
@@ -36,6 +37,7 @@ showinsurance()
   this.listinsurance=this.inservice.listInsurance().subscribe((data)=>
   {this.listinsurance=data; console.log(data);});
   console.log(this.listinsurance);
+  
 }
 
 claimRequest(container :NgForm)

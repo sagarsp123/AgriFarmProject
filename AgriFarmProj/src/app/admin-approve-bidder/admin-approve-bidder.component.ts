@@ -28,7 +28,7 @@ export class AdminApproveBidderComponent implements OnInit {
     }
     console.log(this.unapprovedbidders[i]);
     this.adminapprovebiddersService.updateBidder(this.unapprovedbidders[i]).subscribe((data)=>{console.log(data)});
-    this.mailservice.ApprovalMail(this.unapprovedbidders[i].FarmerEmail).subscribe((data)=>{
+    this.mailservice.ApprovalMail(this.unapprovedbidders[i].BidderEmail).subscribe((data)=>{
       if(data=="mail sent"){
         alert("Bidder Approved!");
         location.reload();

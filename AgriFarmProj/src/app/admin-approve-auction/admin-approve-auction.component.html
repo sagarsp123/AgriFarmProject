@@ -1,4 +1,6 @@
-<p>admin-approve-auction works!</p>
+
+<div class="banner3" id="banner3">
+    <div class="bg-overlay2">
 <div class="contact" id="contact">
     <div class="container">
         <div class="row">
@@ -8,7 +10,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <table class="table table-hover">
+                <table class="table">
                     <thead>
                         <th>BiddingID</th>
         <th>Bidder Id</th>
@@ -17,6 +19,7 @@
         <th>Quantity</th>
         <th>InitalPrice</th>
         <th>CurrentBidPrice</th>
+        <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Action</th>
                     </thead>
                     <tbody>
                         <tr *ngFor="let b of unapprovedbids">
@@ -27,8 +30,7 @@
             <td>{{b.Quantity}}</td>
             <td>{{b.InitalPrce}}</td>
             <td>{{b.CurrentBidPrice}}</td>
-            <td>{{b.BidCloseTime}}</td>
-            <td><button type="button" class="contact-button" style="background:green" (click)="approveauction(b.Biddingid)">Approve Auction</button></td>
+            <td><button type="button" class="contact-button2" style="background:green;" (click)="approveauction(b.Biddingid)">Approve Auction</button></td>
         </tr>
                     </tbody>
                 </table>
@@ -39,8 +41,9 @@
 </div>
 
 
-
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</div>
+</div>
 <!-- <br>
 <br>
 <br>

@@ -1,18 +1,22 @@
+<div class="banner" id="banner">
+    <div class="bg-overlay2">
+
+
 <span class="border border-dark">
     <div id="callMe" class="form1">
         <div class="container">
-            <h1 style="color: #fff;">INSURANCE APPLICATION</h1>
             <div class="row">
                 <div class="center" style="text-align:center">
                     <h2 style="text-align: center;">Insurance Application Form</h2>
 
+                    <br><br>
                     <form #insuranceapp="ngForm" (ngSubmit)="onSubmit(insuranceapp)">
                         
                         <div class="form-group">
                             <label for="Season">Enter Season</label>
                             &nbsp;&nbsp;&nbsp;&nbsp;
                             <select #Season="ngModel" class="form-control-input" [(ngModel)]=insurancedetails.Season
-                                id="Season" name="Season" required > 
+                                id="Season" name="Season" required style="color:black"> 
                                 <option value="KHARIF">KHARIF</option>
                                 <option value="RABI">RABI</option>
                                 <option value="HORTICULTURE">HORTICULTURE</option>
@@ -23,7 +27,7 @@
                         <div class="form-group">
                             <label for="Year">Enter Year</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input #Year="ngModel" type="text" class="form-control-input"
-                                [(ngModel)]=insurancedetails.Year id="Year" name="Year" required size="45">
+                                [(ngModel)]=insurancedetails.Year id="Year" name="Year" required size="45" style="color:black">
 
                             <div *ngIf="Year.invalid && (Year.dirty|| Year.touched)">
                                 <div *ngIf="Year.errors.required" style="color:red;" class="help-block with-errors">Year
@@ -34,7 +38,8 @@
 
                         <div class="form-group">
                             <label for="CropName">Enter Crop</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <select class="form-control-input" name="CropName" id="CropName" [(ngModel)]="insurancedetails.CropName" #CropName="ngModel" required>
+                            <select class="form-control-input" name="CropName" id="CropName" [(ngModel)]="insurancedetails.CropName" #CropName="ngModel"
+                             required style="color:black">
                              <optgroup *ngFor = 'let grp of dataSource' label="{{grp.group}}">
                                 <option *ngFor = 'let item of grp.items' [value]="item.id">{{item.name}}</option> 
                                 </optgroup>
@@ -42,9 +47,9 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="Area">Enter Area in Hectares</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <label for="Area">Enter Area(ha)</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             <input #Area="ngModel" type="text" class="form-control-input"
-                                [(ngModel)]=insurancedetails.Area id="Area" name="Area" required size="50">
+                                [(ngModel)]=insurancedetails.Area id="Area" name="Area" required size="45" style="color:black">
 
                             <div *ngIf="Area.invalid && (Area.dirty|| Area.touched)">
                                 <div *ngIf="Area.errors.required" style="color:red;" class="help-block with-errors">Area
@@ -71,8 +76,6 @@
 
 
                     </form>
-                    
-                    <br><br><br><br><br>
                     <!-- <table border="1" width="100%" cellspacing="0" cellpadding>
                         <tr>
                             <th>Insurance Company</th>
@@ -104,16 +107,17 @@
 
 
 
-<div class="contact" id="contact">
+<div class="contact" id="contact" *ngIf="isVisible">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="text-center">
-                    <h3>Approve Farmer</h3>
+                    <br><br><br>
+                    <h3>Insurance Calculated</h3>
                 </div>
             </div>
             <div class="col-md-12">
-                <table class="table table-hover">
+                <table class="table">
                     <thead>
                         <th>Insurance Company</th>
                             <th>Sum Insured(per Hectare)</th>
@@ -125,20 +129,24 @@
                     <tbody>
                         <tr *ngFor="let data of DetailsOfInsurance">
                             <td>{{data.CompanyName}}</td>
-                            <td>{{data.SumAssuredPerHec}}</td>
-                            <td>{{data.Premium}}</td>
+                            <td>₹ {{data.SumAssuredPerHec}}</td>
+                            <td>₹ {{data.Premium}}</td>
                             <td>{{data.CropName}}</td>
                             <td>{{data.Area}}</td>
-                            <td>{{data.SumAssured}}</td>
+                            <td>₹ {{data.SumAssured}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <br>
             <div class="container">
-                <button type="submit" class="btn btn-primary" (click)="InsuranceData()" style="text-align: center;">Apply</button><br><br>
+                <button type="submit" class="btn btn-primary" (click)="InsuranceData()" style="text-align: center;">Apply</button>
             </div>
             
         </div>
     </div>
 </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</div></div>

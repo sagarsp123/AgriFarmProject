@@ -1,10 +1,14 @@
 <p>marketplace-bidder works!</p>
+<div class="banner" id="banner">
+  <div class="bg-overlay">
+<br>
+<br>
+    <br>
+<h2><p style="text-align: center;">Welcome to Market Place</p></h2>
+<br>
+<br>
+<br>
 
-<br>
-<br>
-<br>
-<br>
-<br>
 <!-- <table border="1" width="100%" cellspacing="0" cellpadding>
     <tr>
         <th>BiddingID</th>
@@ -25,83 +29,33 @@
         <td>{{b.BidCloseTime}}</td>
         <td><button type="button" (click)="gotoauction(b.Biddingid)">Go to Auction</button></td>
     </tr>
-</table> -->
+</table>
 
 
-<div class="contact" id="contact">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-12">
-              <div class="text-center">
-                  <h3>Approve Farmer</h3>
+ -->
+    
+
+    <div class="container">
+      <div class="row" style="height: auto;">
+          <div class="col-md-3 my-5" *ngFor="let b of currentbids" style=" margin-right:50px;margin-bottom:50px;">
+              <div class="card" (click)="gotoauction(b.Biddingid)">
+                  <div class="gradient" style="background-image: linear-gradient(0deg, #0703fa, transparent);"></div>
+                  <div class="info">
+                      <div class="title"><h1>{{b.CropName}}</h1></div>
+                      <b>Quantiy: {{b.Quantity}} Quintals</b>
+                      <p>CropType : {{b.CropType}}</p>
+                    <p>Initial Price : ₹ {{b.InitalPrce}}</p>
+                    <p>Current Price: ₹ {{b.CurrentBidPrice}}</p>
+
+                      <!-- <div class="title">Farmers</div> -->
+                  </div>
               </div>
           </div>
-          <div class="col-md-12">
-              <table class="table table-hover">
-                  <thead>
-                    <th>BiddingID</th>
-                    <th>CropType</th>
-                    <th>CropName</th>
-                    <th>InitalPrce</th>
-                    <th>CurrentBidPrice</th>
-                    <th>BidCloseTime</th>
-                  </thead>
-                  <tbody>
-                    <tr *ngFor="let b of currentbids">
-                      <td>{{b.Biddingid}}</td>
-                      <td>{{b.CropType}}</td>
-                      <td>{{b.CropName}}</td>
-                      <td>{{b.InitalPrce}}</td>
-                      <td>{{b.CurrentBidPrice}}</td>
-                      <td>{{b.BidCloseTime}}</td>
-                      <td><button type="button" class="contact-button" style="background:green;" (click)="gotoauction(b.Biddingid)">Go to Auction</button></td>
-                  </tr>
-                  </tbody>
-              </table>
-          </div>    
       </div>
-  </div>
+      </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+      </div>
 </div>
 
 
-
-<!-- <div class="container">
-    <div class="row">
-      <div class="col-md-3 mx-auto my-5" *ngFor="let b of currentbids">
-        <mdb-card>
-          <mdb-card-body>
-            <mdb-card-title>
-              <h4>{{b.CropName}}</h4>
-            </mdb-card-title>
-  
-            <mdb-card-text>
-                <p>{{b.Biddingid}}</p>
-                <p>{{b.CropType}}</p>
-                <p>{{b.CropName}}</p>
-                <p>{{b.InitalPrce}}</p>
-                <p>{{b.CurrentBidPrice}}</p>
-            </mdb-card-text>
-  
-            <button mdbBtn color="primary" (click)="gotoauction(b.Biddingid)">Go to Auction page</button>
-          </mdb-card-body>
-        </mdb-card>
-      </div>
-    </div>
-  </div> -->
-
-
-<!-- <div class="card-deck">
-
-    <div class="card" *ngFor="let b of currentbids" style="align-items: center;">
-        <div class="circle">
-                <h2>{{b.CropName}}</h2>
-                    <br> {{sale.quantity}}Kg</h2></a>
-        </div>
-        <p> <b>Base Price:</b> ₹{{b.InitalPrce}}</p>
-
-        <p><b>Current price:</b>₹{{b.CurrentBidPrice}}</p>
-        <p><b>State:</b>{{sale.state}}</p> 
-        <button type="button" (click)="gotoauction(b.Biddingid)">Go to Auction</button>
-    </div>
-
-</div> -->

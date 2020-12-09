@@ -28,6 +28,8 @@ import{FarmermarketComponent} from './farmermarket/farmermarket.component';
 
 import { AdminApproveAuctionComponent } from './admin-approve-auction/admin-approve-auction.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { HomeFaqComponent } from './home-faq/home-faq.component';
+
 
 
 const routerOptions: ExtraOptions = {
@@ -60,7 +62,8 @@ const routes: Routes = [
   {path:"ListCrop",component:CroprequestComponent},
   {path:"MarketFarmer",component:FarmermarketComponent},
   {path:"ApproveAuction",component:AdminApproveAuctionComponent},
-  {path:"ForgotPasswordComponent",component:ForgotPasswordComponent}
+  {path:"ForgotPasswordComponent",component:ForgotPasswordComponent},
+  {path:"FAQ",component:HomeFaqComponent},
 
 ];
 

@@ -14,7 +14,7 @@ import { ConvertActionBindingResult } from '@angular/compiler/src/compiler_util/
 export class InsuranceApplicationComponent implements OnInit {
 insurancedetails: InsuranceApp
 
-
+isVisible:boolean=false;
   constructor(private http:HttpClient) { 
     this.insurancedetails={
       Farmerid:"0",
@@ -35,6 +35,10 @@ insurancedetails: InsuranceApp
   onSubmit(formdata:NgForm){
     this.DataForm=formdata.value;
     console.log(this.DataForm);
+    if(this.DataForm.CropName!=null && this.DataForm.Area!=0 && this.DataForm.Year!=null && this.DataForm.Season!=null){
+    this.isVisible=true;
+    
+    console.log(this.DataForm);
     if( this.DataForm.CropName=="Rice"){
       console.log(this.DataForm.Crop);
       this.DetailsOfInsurance.push(
@@ -50,7 +54,9 @@ insurancedetails: InsuranceApp
           Season:this.DataForm.Season
         }
       );
+
       console.log(this.DetailsOfInsurance[0]);
+      
     }
     
     else if(this.DataForm.CropName=="Cotton"){
@@ -168,6 +174,9 @@ insurancedetails: InsuranceApp
       );
       console.log(this.DetailsOfInsurance);
     }
+  }
+    else alert("Please fill the required details");
+    
     
   }
 

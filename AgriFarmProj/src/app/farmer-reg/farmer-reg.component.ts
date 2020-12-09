@@ -90,65 +90,37 @@ OnSubmit(FarmerName,FarmerEmail,FarmerContactNo,FarmerAddress, FarmerCity
   ,FarmerState,FarmerPincocde,A,B, FarmerPassword,
   FarmerLandArea,FarmerLandAddress,FarmerLandPincode,AccountNo,IFSC_Code){
 
+
+    if(FarmerName.value==null) console.log("Hello");
+
+    if(FarmerName.value!=null,FarmerEmail.value!=null,FarmerContactNo.value!=null,FarmerAddress.value!=null, FarmerCity.value!=null
+      ,FarmerState.value!=null,FarmerPincocde.value!=null,this.fileToUpload!=null,this.fileToUpload1!=null, FarmerPassword.value!=null,
+      FarmerLandArea.value!=null,FarmerLandAddress.value!=null,FarmerLandPincode.value!=null,AccountNo.value!=null,IFSC_Code.value!=null){
+
   this.farmservice.postFile(FarmerName.value,FarmerEmail.value,FarmerContactNo.value,FarmerAddress.value, FarmerCity.value
     ,FarmerState.value,FarmerPincocde.value,this.fileToUpload,this.fileToUpload1, FarmerPassword.value,
     FarmerLandArea.value,FarmerLandAddress.value,FarmerLandPincode.value,AccountNo.value,IFSC_Code.value,
     ).subscribe(
     data =>{
-      alert("Data Added Successfully");
-      console.log('done');
-      FarmerName.value = "";
-      FarmerEmail.value = "";
-      FarmerContactNo.value = "";
-      FarmerAddress.value = "";
-      FarmerCity.value = "";
-      FarmerLandArea.value = "";
-      FarmerLandAddress.value = "";
-      FarmerLandPincode.value = "";
-      AccountNo.value = "";
-      IFSC_Code.value = "";
-      A.value ="";
-      FarmerPassword.value = "",
-      B.value="";
+      console.log(data);
+      // alert("Data Added Successfully");
+      // console.log('done');
+      if(data=="Email") alert("This email is already registered with us");
+      else if(data=="Account") alert("This bank account is already registered with us");
+      else if(data=="Error") alert("Error in details.Please fill the details again");
+      if(data=="OK"){
+        alert("Data Added Successfully");
+        console.log(data);
       
       this.imageUrl = "/assets/images/farmer.jpg";
       this.imageUrl1 = "/assets/images/farmer.jpg";
+      }
+      
       
     }
   );
+      }
+      else alert("Please fill the required details");
  }
 
-/*  OnDetails(farmerform:NgForm){
-    console.log(farmerform.value);
-    const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
-    this.http.post('https://localhost:44322/api/registration/',JSON.stringify(farmerform.value),httpheader)
-    .subscribe((data)=>
-    {console.log(data);
-      this.alert= true;  
-    })
-  }
-  
-  closeAlert(){
-    this.alert=false;
-  }*/
-  
-  /*
-  OnLandDetails(landform:NgForm){
-    console.log(landform.value);
-    const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
-    this.http.post("https://localhost:44329/api/contactus/",JSON.stringify(landform.value),httpheader)
-    .subscribe((data)=>
-    {console.log(data);
-    })
-  }
-
-  OnBankDetails(bankform:NgForm){
-    console.log(bankform.value);
-    const httpheader={headers:new HttpHeaders({'Content-Type':'application/json'})};
-    this.http.post("https://localhost:44329/api/contactus/",JSON.stringify(bankform.value),httpheader)
-    .subscribe((data)=>
-    {console.log(data);
-    })
-  }*/
-  
 }

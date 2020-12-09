@@ -53,6 +53,8 @@ import { ForgotserviceService } from './services/ForgetService'
 
 import { AdminApproveAuctionComponent } from './admin-approve-auction/admin-approve-auction.component';
 import {AdminApproveAuctionService} from './services/admin-approve-auction.service';
+import { NgImageSliderModule } from 'ng-image-slider';
+import { HomeFaqComponent } from './home-faq/home-faq.component';
 
 
 @NgModule({
@@ -81,7 +83,8 @@ import {AdminApproveAuctionService} from './services/admin-approve-auction.servi
     CroprequestComponent,
     FarmermarketComponent,
     AdminApproveAuctionComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    HomeFaqComponent
   ],
 
   imports: [
@@ -92,6 +95,7 @@ import {AdminApproveAuctionService} from './services/admin-approve-auction.servi
     RouterModule,
     ValidateEqualModule,
     ReactiveFormsModule,
+    NgImageSliderModule,
   ],
   
   providers: [
